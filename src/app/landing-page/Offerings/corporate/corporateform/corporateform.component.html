@@ -1,0 +1,230 @@
+<app-header></app-header>
+<!-- -------- START HEADER 10 w/ carousel ------- -->
+<header>
+    <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"> -->
+      <!-- <div class="carousel-inner"> -->
+        <!-- <div class="carousel-item active"> -->
+          <div class="page-header min-vh-75" style="background-image: url(&#39;https://media.istockphoto.com/photos/this-merger-will-see-the-potential-growth-of-our-business-picture-id1215758851?b=1&k=20&m=1215758851&s=170667a&w=0&h=sRgM4GbfNsddxfLzsSNC4R1pOc8xVS6E_g3zHjLJBds=&#39;);" loading="lazy">
+            <span class="mask bg-gradient-dark"></span>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 my-auto">
+                  <!-- <h4 class="text-white mb-0 fadeIn1 fadeInBottom">Pricing Plans</h4> -->
+                  <h1 class="text-white fadeIn2 fadeInBottom">Work with Us!</h1>
+                  <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">"We are stronger when we listen, and smarter when we share." — Rania Al-Abdullah</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card shadow-lg mt-n5 mx-4 mb-4">
+            <section>
+                <div class="container py-4">
+                  <div class="row">
+                    <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column shadow-lg">
+                      <h3 class="text-center text-primary mt-5 mb-5">Corporate Membership Form</h3>
+                      <form role="form" [formGroup]="validateCorporateForm" (ngSubmit)='newCorporate()' method="POST">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="input-group input-group-dynamic mb-4">
+                                <label class="form-label"> Name</label>
+                                <input class="form-control"type="text" [(ngModel)]="corporate.name" name="name" placeholder=""
+                                formControlName="name" value="" >
+                              </div>
+                            </div>
+                            <!-- <div class="col-md-6 ps-2">
+                              <div class="input-group input-group-dynamic">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                              </div>
+                            </div> -->
+                          </div>
+                          <div class="mb-4">
+                            <div class="input-group input-group-dynamic">
+                              <label class="form-label">Address</label>
+                              <input  type="text" [(ngModel)]="corporate.address" name="address"
+                              placeholder="" value="" formControlName="address" class="form-control">
+                            </div>
+                          </div>
+                          <div class="row">
+                              
+                          <div class="col-md-6">
+                            <div class="input-group input-group-dynamic mb-4">
+                              <label class="form-label">Head of the Organization</label>
+                              <input class="form-control"  type="text" [(ngModel)]="corporate.head" name="head"
+                              placeholder="" value="" formControlName="head" >
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="input-group input-group-dynamic mb-4">
+                              <label class="form-label"> Nature of the Organization (Product/Services)</label>
+                              <input class="form-control" type="text" [(ngModel)]="corporate.nature" name="nature"
+                                        placeholder="" value="" formControlName="nature" />
+                             
+                            </div>
+                          </div>
+                          </div>
+    
+                          <div class="input-group input-group-dynamic">
+                            <label class="form-label">Website</label>
+                            <input   class="form-control" type="text" [(ngModel)]="corporate.website" name="website"
+                            placeholder="" value="" formControlName="website" >
+                          </div>
+                          
+                          <div class="row mt-4">
+                              
+                            <div class="col-md-6">
+                                <label class="form-label">Type of the Company</label>
+                              <div class="input-group input-group-dynamic mb-4">
+                               
+                                <select class="form-control" formControlName="typeof" [(ngModel)]="corporate.typeof" >
+                                    <option value=""></option>
+                                    <option *ngFor="let pvt of pvts" [ngValue]="pvt">{{pvt}}</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label"> Corporate Identify Number</label>
+                              <div class="input-group input-group-dynamic mb-4">
+                               
+                                <input class="form-control" type="text" [(ngModel)]="corporate.identityNo" name="identityNo"
+                                placeholder="" value="" formControlName="identityNo" >
+                              </div>
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label"> GST Number</label>
+                              <div class="input-group input-group-dynamic mb-4">
+                               
+                                <input class="form-control"  type="text" [(ngModel)]="corporate.GST" name="GST" placeholder="GST Number"
+                                value="" formControlName="GST">
+                              </div>
+                            </div>
+                          
+                          <!-- <div class="input-group mb-4 input-group-static">
+                            <label>Your message</label>
+                            <textarea name="message" class="form-control" id="message" rows="4"></textarea>
+                          </div> -->
+                         
+                          <h3 class="text-center mt-5 mb-5">Point Of Contact </h3>
+    
+                          <div class="row mt-4">
+                              
+                            <div class="col-md-6">
+                                <label class="form-label">Name</label>
+                              <div class="input-group input-group-dynamic mb-4">
+                                <input class="form-control" type="text" [(ngModel)]="corporate.nameofContact" name="nameofContact"
+                                placeholder="" formControlName="nameofContact" value="" />
+                                
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Mobile Number</label>
+                              <div class="input-group input-group-dynamic mb-4">
+                               
+                                <input class="form-control" type="text" [(ngModel)]="corporate.phone" name="identityNo"
+                                placeholder="" value="" formControlName="identityNo" >
+                              </div>
+                            </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="input-group input-group-dynamic">
+                                  <label class="form-label">Technical Skill Sets Commonly Used In The Organisation</label>
+                                  <input  class="form-control"  type="text" [(ngModel)]="corporate.TechnicalSkill" name="TechnicalSkill"
+                                  placeholder="" value=""
+                                  formControlName="TechnicalSkill">
+                                </div>
+                              </div>
+                              <div class="row mt-4">
+                              
+                                <div class="col-md-6">
+                                   
+                                  <div class="input-group input-group-dynamic mb-4">
+                                    <label class="form-label">Email</label>
+                                    <input class="form-control" type="text" [(ngModel)]="corporate.email" name="email" placeholder=""
+                                    value="" formControlName="email"  />
+                                    
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                   
+                                  <div class="input-group input-group-dynamic mb-4">
+                                    <label class="form-label">Employee Count</label>
+                                    <input class="form-control" type="text" [(ngModel)]="corporate.employeeCount" name="employeeCount"
+                                    placeholder="" value="" formControlName="employeeCount">
+                                  </div>
+                                </div>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="input-group input-group-dynamic ">
+                                        <label class="form-label">How do you wish to collaborate</label>
+                                        <ng-select [items]="categories" bindLabel="name" placeholder="" appendTo="body"
+                                        [multiple]="true" [(ngModel)]="corporate.collaborate"  formControlName="collaborate">
+                                    </ng-select>
+                                    </div>
+                                  </div>
+                                  <div class="row mt-4">
+                              
+                                    <div class="col-md-6">
+                                        <label class="form-label">Number of Patents per Year</label>
+                                      <div class="input-group input-group-dynamic mb-4">
+                                       
+                                        <select class="form-control" formControlName="patents" [(ngModel)]="corporate.patents" >
+                                            <option value=""></option>
+                                            <option *ngFor="let patent of patents" [ngValue]="patent">{{patent}}</option>
+                                        </select>
+                                        
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Average yearly fresher hiring in your company </label>
+                                      <div class="input-group input-group-dynamic mb-4">
+                                       
+                                        <select class="form-control" formControlName="hire" [(ngModel)]="corporate.hire">
+                                          <option value=""></option>
+                                          <option *ngFor="let hire of hires" [ngValue]="hire">{{hire}}</option>
+                                      </select>
+                                       
+                                      </div>
+                                    </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <div class="input-group input-group-dynamic ">
+                                            <label class="form-label">Any corporate interface program/ activities conducted by your organization? If so please provide the details</label>
+                                            <input class="form-control" type="text"
+                                placeholder=""
+                                [(ngModel)]="corporate.details" name="details" value="" formControlName="details" />
+                                        </div>
+                                      </div>
+    
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-check form-switch mb-4 d-flex align-items-center">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked="">
+                                <label class="form-check-label ms-3 mb-0" for="flexSwitchCheckDefault">I agree to the <a href="javascript:;" class="text-dark"><u>Terms and Conditions</u></a>.</label>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input class="btn btn-info w-100" type="submit" 
+                                value="REGISTER" >
+                              <!-- <button type="submit" class="btn bg-gradient-dark w-100">Send Message</button> -->
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </section>
+                     </div>
+        <!-- </div> -->
+        
+
+        
+  
+  </header>
+  <!-- -------- END HEADER 11 w/ carousel ------- -->
+
+  <app-footer></app-footer>
+
+

@@ -1,0 +1,155 @@
+<app-header></app-header>
+
+<header>
+  <div
+    class="page-header min-vh-70"
+    style="
+      background-image: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    "
+  >
+    <span class="mask bg-gradient-dark"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-white text-center">
+          <h2 class="text-white">Our Courses</h2>
+          <p class="lead">
+            ICT Academy of Kerala offers specialized certificate courses
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="position-relative overflow-hidden"
+    style="height: 36px; margin-top: -33px"
+  >
+    <div
+      class="w-full absolute bottom-0 start-0 end-0"
+      style="transform: scale(2); transform-origin: top center; color: #fff"
+    >
+      <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </div>
+  </div>
+  <div class="container">
+    <div
+      class="
+        row
+        bg-white
+        shadow-lg
+        mt-n6
+        border-radius-md
+        pb-4
+        p-3
+        mx-sm-0 mx-1
+        position-relative
+        justify-content-center
+      "
+    >
+      <div class="col-lg-3 mt-lg-n2 mt-2">
+        <label class="">&nbsp;</label>
+        <div class="input-group input-group-outline"  >
+          <!-- <label class="form-label">Course Name</label> -->
+          <input class="form-control" type="text" placeholder="Course Name" [(ngModel)]="query" id="listSearch"  />
+
+          
+        </div>
+      </div>
+      <div class="col-lg-3 mt-lg-n2 mt-2">
+        <label class="">&nbsp;</label>
+        <button type="button" class="btn bg-gradient-dark w-100 mb-0">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- -------- END HEADER 4 w/ search book a ticket form ------- -->
+<!-- | searchFilter: query' -->
+<!-- [(ngModel)]="query" id="listSearch" -->
+
+<!-- card 2 checking  -->
+<section class="py-5 bg-gray-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 mx-auto text-center mb-5">
+        <h3 class="text-gradient text-info mb-0">Our Courses</h3>
+        <h3>You are into a great company</h3>
+        <p>
+          This is the paragraph where you can write more details about your
+          team. Keep you user engaged by providing meaningful information.
+        </p>
+      </div>
+    </div>
+    <!-- pipe -->
+    <div class="row" *ngIf="( courses |  searchFilter: query) as result">
+      <div *ngIf="result.length === 0" class="text-center"><h5>No Results Found</h5></div>
+
+      <div class="col-lg-4 col-md-6" *ngFor='let i of courses | searchFilter: query' >
+        <div class="card card-profile mb-2 bg-gray-100">
+          <a href="javascript:;">
+            <div class="p-3">
+
+              <!-- <img  class="w-100 min-height-100 max-height-100 border-radius-lg shadow" src="http://localhost:3000/{{ i.courseImage}}" alt=""> -->
+              <img
+                class="w-100 border-radius-md mb-7" 
+                src="http://localhost:3000/{{ i.courseImage}}"
+              />   
+            </div>  
+          </a>
+          <div
+            class="
+              card__text card-body
+              blur
+              justify-content-center
+              text-center
+              mt-n5
+              mx-4
+              mb-0
+              border-radius-md ">
+            <h4 class="mb-0">{{ i.courseShortName }}</h4>
+            <p>{{ i.courseType }}</p>
+            <div class="row justify-content-center" >
+             
+              <div class="col-lg-4 col-sm-12 col-md-12">
+                <h5 class="text-info mb-0">6 month</h5>
+                <small>Duration</small>
+              </div>
+             
+            </div>
+            <p class="card-description mt-4 mb-2" style="height: 100px;overflow-y: scroll;">
+             {{ i.shortDesc }}
+            </p>
+
+            <div class="row justify-content-center text-center">
+              <div class="col-lg-12 col-sm-6 col-md-6">
+                <a>
+                  <button type="button" class="btn btn-primary btn" routerLink="/LandingPage/singlecourses/{{ i._id }}" >
+                    Know more
+                  </button></a
+                >
+              </div>
+              <!-- <div class="col-lg-5 col-sm-6 col-md-6">
+                <button type="button" class="btn btn-primary btn">Apply</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+     
+    </div>
+  </div>
+</section>
+
+<!-- START Testimonials w/ 3 cards & dark background -->
+
+<app-testimonial-course></app-testimonial-course>
+
+
+<app-footer></app-footer>

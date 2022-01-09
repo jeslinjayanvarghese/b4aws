@@ -1,0 +1,43 @@
+<div class="container mt-7">
+  <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">
+    <header>
+     
+      <div class="h1 text-center text-dark mt-5" id="pageHeaderTitle">OUR TEAM</div>
+    </header>
+
+    <section>
+     
+      <div class="row">
+  <owl-carousel-o [options]="teamSlider">
+    <ng-container  *ngFor="let team of teams"  >
+    <ng-template carouselSlide  >
+
+   
+    <div class="container mt-5 mb-5">
+      <div class="card " style="height: 400px;overflow-y: hidden;">
+        <img src="{{ team.image }}" alt="Chyno Deluxe">
+        <h1>{{ team.name }}</h1>
+        <h2>{{ team.designation }}</h2>
+        <a class="button" href="https://instagram.com/chynodeluxe" target="_blank"><span>+</span> Follow</a>
+      
+        <div class="d-flex justify-content-center mt-2">
+          <a href="javascript:;"><i class="fab fa-facebook text-lg text-dark me-4" aria-hidden="true"></i></a>
+          <a href="javascript:;"><i class="fab fa-instagram text-lg text-dark me-4" aria-hidden="true"></i></a>
+          <a href="javascript:;"><i class="fab fa-twitter text-lg text-dark me-4" aria-hidden="true"></i></a>
+          <a href="javascript:;"><i class="fab fa-google-plus text-lg text-dark" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  
+   
+     
+      
+
+    </ng-template>
+  </ng-container>
+  </owl-carousel-o>
+</div>
+    </section>
+   
+  </div>
+</div>

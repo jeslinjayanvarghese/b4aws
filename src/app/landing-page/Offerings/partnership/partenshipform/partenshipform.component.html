@@ -1,0 +1,143 @@
+<app-header></app-header>
+<!-- -------- START HEADER 10 w/ carousel ------- -->
+<header>
+    <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"> -->
+      <!-- <div class="carousel-inner"> -->
+        <!-- <div class="carousel-item active"> -->
+          <div class="page-header min-vh-75" style="background-image: url(&#39;https://media.istockphoto.com/photos/this-merger-will-see-the-potential-growth-of-our-business-picture-id1215758851?b=1&k=20&m=1215758851&s=170667a&w=0&h=sRgM4GbfNsddxfLzsSNC4R1pOc8xVS6E_g3zHjLJBds=&#39;);" loading="lazy">
+            <span class="mask bg-gradient-dark"></span>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 my-auto">
+                  <!-- <h4 class="text-white mb-0 fadeIn1 fadeInBottom">Pricing Plans</h4> -->
+                  <h1 class="text-white fadeIn2 fadeInBottom">Work with Us</h1>
+                  <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">"We are stronger when we listen, and smarter when we share." — Rania Al-Abdullah</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card shadow-lg mt-n5 mx-4 mb-4">
+            <section>
+                <div class="container py-4">
+                  <div class="row">
+                    <div class="col-lg-7 mx-auto d-flex justify-content-center flex-column">
+                      <div class="card d-flex justify-content-center p-4 shadow-lg">
+                        <div class="text-center">
+                          <h3 class="text-gradient text-primary">PARTNERSHIP FORM</h3>
+                          <p class="mb-0">
+                            For further questions, including partnership opportunities, please email For support / clarification feel free to call @ 8111840022 or write to us @ sreekumar.kv@ictkerala.org
+                          </p>
+                        </div>
+                        <div class="card card-plain">
+                          <form [formGroup]="validatePartnerForm" (ngSubmit)='newPartner()' #heroForm="ngForm" method="POST">
+                            <div class="card-body pb-2">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <div class="input-group input-group-static mb-4">
+                                    <label>Full Name</label>
+                                    <input class="form-control" type="text" [(ngModel)]="partner.name" name="name" placeholder="Name"
+                                    formControlName="name" value=""  >
+                                  </div>
+                                </div>
+                                <div class="col-md-6 ps-md-2">
+                                  <div class="input-group input-group-static">
+                                    <label>Email</label>
+                                    <input  class="form-control" type="text" [(ngModel)]="partner.email" name="email"
+                                    placeholder=" Email" value="" formControlName="email">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <div class="input-group input-group-static mb-4">
+                                    <label>Phone Number</label>
+                                    <input class="form-control"  type="text" [(ngModel)]="partner.phone" name="phone"
+                                    placeholder=" Contact Number" value="" formControlName="phone">
+                                  </div>
+                                </div>
+                                <div class="col-md-6 ps-md-2">
+                                  <div class="input-group input-group-static">
+                                    <label>Firm</label>
+                                    <input  class="form-control"  type="text" [(ngModel)]="partner.firm" name="firm"
+                                    placeholder="Published Date" value="" formControlName="firm" >
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <div class="input-group input-group-static mb-4">
+                                    <label>Address</label>
+                                    <input class="form-control" type="text" [(ngModel)]="partner.address" name="address"
+                                    placeholder="Address" value="" formControlName="address">
+                                  </div>
+                                </div>
+                                <div class="col-md-6 ps-md-2">
+                                  <div class="input-group input-group-static">
+                                    <label>District</label>
+                                    <input  class="form-control"  type="text" [(ngModel)]="partner.district" name="district"
+                                    placeholder="Distict" value="" formControlName="district">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <div class="input-group input-group-static mb-4">
+                                    <label>Office Space in Square Feet</label>
+                                    <input class="form-control"  type="text" [(ngModel)]="partner.officeSpace" name="officeSpace"
+                                    placeholder=" Office Space in Square Feet" value="" formControlName="officeSpace"  >
+                                  </div>
+                                </div>
+                                <div class="col-md-6 ps-md-2">
+                                  <div class="input-group input-group-static">
+                                    <label>Number of Employees</label>
+                                    <input  class="form-control"  type="text" [(ngModel)]="partner.employeeCount" name="employeeCount"
+                                    placeholder="Number of Employees" value="" formControlName="employeeCount"  >
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="input-group input-group-static mb-0 mt-md-0 mt-4">
+                                <label>Brief Report</label>
+                                <textarea  class="form-control" type="text"
+                                placeholder="Write a brief report about the outcome/impact you have done so far with respect to the training industry?"
+                                [(ngModel)]="partner.report" name="report" value="" formControlName="report"
+                                ></textarea>
+                              </div>
+                              <div class="input-group input-group-static mb-0 mt-md-0 mt-4">
+                               
+                                <label>Expects</label>
+                                <textarea  class="form-control" type="text"
+                                placeholder="What are you expecting in partnering with ICT academy of Kerala?"
+                                [(ngModel)]="partner.expect" name="expect" value="" formControlName="expect"
+                                ></textarea>
+                              </div>
+                              <div class="input-group input-group-static mb-0 mt-md-0 mt-4">
+                                <label>Promoters</label>
+                                <textarea  class="form-control"  type="text" placeholder="Brief Profile of the promoters"
+                                [(ngModel)]="partner.profile" name="profile" value="" formControlName="profile"
+                                ></textarea>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-12 text-center">
+                                  <button type="submit" [disabled]="validatePartnerForm.pristine || validatePartnerForm.invalid"
+                                  value="Submit"class="btn bg-gradient-primary mt-3 mb-0">Send Message</button>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+                     </div>
+        <!-- </div> -->
+        
+
+        
+  
+  </header>
+  <!-- -------- END HEADER 11 w/ carousel ------- -->
+
+  <app-footer></app-footer>
