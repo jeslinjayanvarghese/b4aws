@@ -79,6 +79,13 @@ export class LandingService {
     return this.http.post(`${this.server_address}/CorporateApplication`,{"members":corporate})
   }
 
+  //?Partnership
+    partnerSubmit(partner: any){
+      console.log(partner);
+      return this.http.post(`${this.server_address}/PartnershipApplication`,{"members":partner})
+    }
+  
+
  
 
   //!Testimonials

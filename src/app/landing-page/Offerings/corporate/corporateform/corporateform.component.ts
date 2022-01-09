@@ -9,7 +9,7 @@ import { LandingService } from 'src/app/landing.service';
 })
 export class CorporateformComponent implements OnInit {
 
-  
+  title ='Corporate Form';
   categories = [
     'Providing experts for skill sessions',
      'Fresher hiring',
