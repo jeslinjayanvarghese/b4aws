@@ -339,7 +339,7 @@
 
           <div class="input-box">
             <span class="details">Course Image</span>
-            <input type="file"  class="form-control"  formControlName="img" name="file"  (change)="courseImage($event)" required>
+            <input type="file"  class="form-control"  formControlName="img" name="image"  (change)="courseImage($event)" required>
             <small style="color:#D81B60;" *ngIf="img && img.invalid && img.touched">Course Image is required</small>
           </div>
         

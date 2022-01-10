@@ -39,7 +39,7 @@ export class MainPageComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
-    dots: true,
+    dots: false,
     navSpeed: 700,
 
     navText: ['<i class="fas fa-chevron-circle-left text-white"></i>', '<i class="fas fa-chevron-circle-right text-white"></i>'],

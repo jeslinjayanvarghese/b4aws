@@ -11,7 +11,8 @@ export class AdminServiceService {
 
   constructor(private http: HttpClient) { }
   
-  server_address: string = "http://localhost:3000"
+    server_address: string ='/api';
+  //server_address: string = "http://localhost:3000"
   
   getCourses() {
     return this.http.get<any>(`${this.server_address}/course`);
@@ -30,7 +31,7 @@ export class AdminServiceService {
   };
 
   getSingleCourse(id: any) {
-    return this.http.get(`${this.server_address}/course/courseSingle/` +id);
+    return this.http.get(`${this.server_address}/course/courseSingle/`+id);
   };
 
   // updateCourseIndex(course: any) {
@@ -45,13 +46,22 @@ export class AdminServiceService {
   };
 
   newCourse(course: any) {
-    return this.http.post(`${this.server_address}/course/Course/add`, course);
+    return this.http.post<any>(`${this.server_address}/course/Course/add`, course);
   }
 
   deleteCourse(id: any) {
     console.log("id getting",id._id)
-    return this.http.post<any>(`${this.server_address}/course/Course/remove`,id);
+    return this.http.post<any>(`${this.server_address}/course/Course/remove`, id);
   }
+
+  // course registered users
+getregistereduser() {
+  return this.http.get<any>(`${this.server_address}/registration/registercourseList`);
+};
+// delete registered user
+deleteuser(data:any){
+  return this.http.post<any>(`${this.server_address}/registration/remove`,data);
+}
   
 
 //!Testimonials
@@ -63,33 +73,34 @@ gettestimonial(id: any) {
 
 
 gettestimonials() {
-  return this.http.get(`${this.server_address}/CourseTestimony`);
+  return this.http.get<any>(`${this.server_address}/CourseTestimony`);
 }
 
 updateTestimonialIndex(testimonial: any) {
-  return this.http.put(`${this.server_address}/testimonials/Testimonials/updateIndex`, testimonial);
+  return this.http.put<any>(`${this.server_address}/testimonials/Testimonials/updateIndex`, testimonial);
 };
 
 
 newTestimonial(item: any) {
 
-  return this.http.post(`${this.server_address}/CourseTestimony/courseTestimony/add`,item)
+  return this.http.post<any>(`${this.server_address}/CourseTestimony/courseTestimony/add`,item)
 }
 
 
 deletetestimonial(testi: any) {
-  return this.http.post(`${this.server_address}/CourseTestimony/courseTestimony/remove`, testi);
+  console.log("inside delete ts")
+  return this.http.post<any>(`${this.server_address}/CourseTestimony/courseTestimony/remove`, testi);
 }
 
 
 editTestimonial(item: any) {
-  return this.http.post(`${this.server_address}/CourseTestimony/testimonial/update`, item)
+  return this.http.post<any>(`${this.server_address}/CourseTestimony/testimonial/update`, item)
 };
 
 //!Events
 
 getevent(id: any) {
-  return this.http.get(`${this.server_address}/eventsadmin//singleevent/` +id);
+  return this.http.get(`${this.server_address}/eventsadmin/singleevent/` +id);
 }
 
 newEvent(item: any) {
@@ -187,29 +198,22 @@ deleteacademic(AcademicAppln : any){
 // corporate membership
 // corporate list
 getcorporate() {
-  return this.http.get(`${this.server_address}/CorporateApplication/data`);
+  return this.http.get<any>(`${this.server_address}/CorporateApplication/data`);
 };
 deletecorporate(corporate:any) {
-  return this.http.post(`${this.server_address}/CorporateApplication/remove`,corporate);
+  return this.http.post<any>(`${this.server_address}/CorporateApplication/remove`,corporate);
 };
 
 // partnership
 getpartnership() {
-  return this.http.get(`${this.server_address}/PartnershipApplication`);
+  return this.http.get<any>(`${this.server_address}/PartnershipApplication`);
 };
 // delete partnership member
-deletepartner(partnerAppl:any){
-  return this.http.post(`${this.server_address}/PartnershipApplication/remove`,partnerAppl);
+deletepartner(id:any){
+  return this.http.post<any>(`${this.server_address}/PartnershipApplication/remove`,id);
 }
 
-// course registered users
-getregistereduser() {
-  return this.http.get(`${this.server_address}/registration/registercourseList`);
-};
-// delete registered user
-deleteuser(data:any){
-  return this.http.post<any>(`${this.server_address}/registration/remove/`,data);
-}
+
 
 
   // !Todos
@@ -226,7 +230,60 @@ deleteuser(data:any){
     this.todoList.unshift(item);
   }
   
-  
+  //! industry
+
+  addIndustry(item: any) {
+    console.log("item",item)
+    return this.http.post<any>(`${this.server_address}/industrypartneradmin/add`,item);
+  }
+
+  ViewIndustry() { 
+
+    return this.http.get(`${this.server_address}/industry`);
+   
+  }
+
+  RemoveIndus(data: any) {
+  console.log("vannitundeee")
+  return this.http.post(`${this.server_address}/industrypartneradmin/remove/`,data);
+  }
+
+  //Knowledge
+  addKnowledge(item: any) {
+    console.log("item",item)
+    return this.http.post<any>(`${this.server_address}/knowledgeadmin`,item);
+  }
+
+  ViewKnowledge() { 
+
+    return this.http.get(`${this.server_address}/knowledge`);
+   
+  }
+
+  RemoveKnowledge(data: any) {
+  console.log("remove")
+  return this.http.post<any>(`${this.server_address}/knowledgeadmin/remove`,data);
+  }
+
+
+  //patrons
+  addpatrons(item: any) {
+    console.log("item",item)
+    return this.http.post<any>(`${this.server_address}/patronadmin/add`,item);
+  }
+
+  Viewpatron() { 
+
+    return this.http.get(`${this.server_address}/patrons`);
+   
+  }
+
+  Removepatron(data: any) {
+  console.log("vannitundeee")
+  return this.http.post(`${this.server_address}/patronadmin/remove/`,data);
+  }
+
+
 
 
     

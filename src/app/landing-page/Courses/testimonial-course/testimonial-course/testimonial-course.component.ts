@@ -30,7 +30,7 @@ export class TestimonialCourseComponent implements OnInit {
     touchDrag: true,
     pullDrag: false,
     
-    dots: true,
+    dots: false,
     navSpeed: 600,
     navText: [ ' <i class="material-icons  me-2 text-md">arrow_back_ios</i>', ' <i class="material-icons opacity-6 me-2 text-md">arrow_forward_ios</i>' ],
     responsive: {

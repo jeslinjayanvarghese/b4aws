@@ -186,7 +186,7 @@ export class AddcourseComponent implements OnInit {
   courseImage(event: any) {
     
     this.selectedFile = <File>event.target.files[0];
-    this.fd.append('file', this.selectedFile, this.selectedFile.name);
+    this.fd.append('image', this.selectedFile, this.selectedFile.name);
   }
   
   // courseDelivery(event: any){

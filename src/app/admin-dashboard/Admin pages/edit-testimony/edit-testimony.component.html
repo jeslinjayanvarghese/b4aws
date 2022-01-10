@@ -223,7 +223,7 @@
                                                         
                                                         <div class="mt-4"><span>Image</span></div> 
                                                         <div class="input-group input-group-dynamic">
-                                                            <img src="http://localhost:3000/{{testimonialItem.image}}" width="80px" class="p-2" alt="">
+                                                            <img src="api/{{testimonialItem.image}}" width="80px" class="p-2" alt="">
                                                             <input  #file type="file"  formControlName="img" (change)="createFormData($event)" (change)="preview(file.files)" accept='image/*' class="form-control multisteps-form__input">
                                                         </div>
                                                         <span class="mb-2" *ngIf="img && img.invalid && img.touched" style="color:#D81B60; font-size: 12px;">Please insert image</span>

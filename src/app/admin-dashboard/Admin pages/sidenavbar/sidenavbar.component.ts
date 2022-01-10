@@ -60,7 +60,7 @@ export class SidenavbarComponent implements OnInit {
     localStorage.removeItem('add')
     localStorage.removeItem('delete')
     localStorage.removeItem('edit')
-    this._router.navigate(['adminpage/login'])
+    this._router.navigate(['/'])
   }
      
   //  loggeduser ()

@@ -239,7 +239,7 @@
 
           <div class="input-box">
             <span class="details"> Image</span>
-            <img src="http://localhost:3000/{{eventDetails.image}}" width="150px" class="p-2" alt="">
+            <img src="api/{{eventDetails.image}}" width="150px" class="p-2" alt="">
             <input type="file"  class="form-control"  formControlName="img"  (change)="createFormData($event)"   [(ngModel)]="eventDetails.image" required>
             <small style="color:#D81B60;" *ngIf="img && img.invalid && img.touched"name="image" > Image is required</small>
           </div>

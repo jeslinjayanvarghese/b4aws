@@ -1,8 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import {AdminServiceService} from '../admin-service.service'
-
+import {AdminServiceService} from '../admin-service.service';
 import Swal from 'sweetalert2';
 import {Router,ActivatedRoute} from '@angular/router'
 
@@ -218,22 +217,22 @@ export class EditCoursesComponent implements OnInit {
   //course image upload
   courseImage(event: any) {
     this.selectedFile = <File>event.target.files[0];
-    this.fd.append('file', this.selectedFile, this.selectedFile.name);
+    this.fd.append('image', this.selectedFile, this.selectedFile.name);
   }
   
-  courseDelivery(event: any){
-    this.selectedFile = <File>event.target.files[0];
-    this.fd.append('file2', this.selectedFile, this.selectedFile.name);
-  }
+  // courseDelivery(event: any){
+  //   this.selectedFile = <File>event.target.files[0];
+  //   this.fd.append('file2', this.selectedFile, this.selectedFile.name);
+  // }
 
-  courseIntern(event: any) {
-    this.selectedFile = <File>event.target.files[0];
-    this.fd.append('file3', this.selectedFile, this.selectedFile.name);
-  }
-  courseKnowledge(event: any) {
-    this.selectedFile = <File>event.target.files[0];
-    this.fd.append('file4', this.selectedFile, this.selectedFile.name);
-  }
+  // courseIntern(event: any) {
+  //   this.selectedFile = <File>event.target.files[0];
+  //   this.fd.append('file3', this.selectedFile, this.selectedFile.name);
+  // }
+  // courseKnowledge(event: any) {
+  //   this.selectedFile = <File>event.target.files[0];
+  //   this.fd.append('file4', this.selectedFile, this.selectedFile.name);
+  // }
 
  
 }

@@ -64,20 +64,23 @@ searchText:any;
        this.adminServ.deleteuser(RegsiteredUser)
          .subscribe(
            response => {
+             console.log(response._id);
              if (response.isConfirmed) {
-               Swal.fire("Successfully Deleted","","success")
-               .then(()=>{
-                 let currentUrl = this.router.url;
-                 this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-                     this.router.navigate([currentUrl]);
-                 });
-               })
+              Swal.fire("Network Error", "Please do after sometime ", "error")
+              .then(()=>{
+                this.router.navigate(['../registered-users'], { relativeTo: this.route });
+              })
+               
              }
              else {
-               Swal.fire("Network Error", "Please do after sometime ", "error")
-               .then(()=>{
-                 this.router.navigate(['../registered-users'], { relativeTo: this.route });
-               })
+              Swal.fire("Successfully Deleted","","success")
+              .then(()=>{
+                let currentUrl = this.router.url;
+                this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+                    this.router.navigate([currentUrl]);
+                });
+              })
+              
  
              }
            }
