@@ -19,9 +19,20 @@
             <p class="lead">
               ICT Academy of Kerala offers a wide variety of Specialized Certificate Courses.
             </p>
-            <button type="button" class="btn bg-gradient-success w-auto me-2 " data-bs-toggle="modal"
+
+            <button type="button" class="btn bg-gradient-danger w-auto me-2 "  *ngIf="course.Reg_Status==0" 
+              >
+              Closed
+            </button>
+            
+            <button type="button" class="btn bg-gradient-success w-auto me-2 "  *ngIf="course.Reg_Status==1" data-bs-toggle="modal"
               data-bs-target="#exampleModalSignup">
               Apply Now
+            </button>
+
+            <button type="button" class="btn bg-gradient-warning w-auto me-2 "  *ngIf="course.Reg_Status==2" 
+             >
+              Coming Soon
             </button>
 
           </div>
@@ -230,8 +241,8 @@
                           <div class="row justify-content-center">
                             <div class="col-lg-6 col-sm-9 text-center mx-auto">
                               <h1 class="text-white mb-4">{{ course.courseShortName }}</h1>
-                              <p class="lead text-white mb-sm-6 mb-4" style="max-height: 300px;overflow-y: scroll;">
-                                {{ course.courseAbout }}
+                              <p class="lead text-white mb-sm-6 mb-4" style="max-height: 300px;overflow-y: scroll;" [innerHTML]="course.courseAbout">
+                          
                               </p>
                               <!-- <p class="text-white h6 text-uppercase mb-4">
                                       Apply Now
@@ -344,7 +355,9 @@
 
                           <div class="col-md-5 me-auto my-auto ms-5">
                             <div class="p-3 info-horizontal d-flex">
-                              <div [innerHTML]="course.Objectives">
+                              <div>
+                              <div [innerHTML]="course.courseAgenda">
+                            
                                 <!-- <ul class="u">
                                   <h5>
                                     <li
@@ -353,6 +366,7 @@
                                     ></li>
                                   </h5>
                                 </ul> -->
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -1141,9 +1155,17 @@
                           Course Fee
                         </h6>
                         <h1 class="mt-0"><small>₹</small>{{ course.courseFee }} + GST</h1>
-                        <button type="button" class="btn bg-gradient-danger btn-lg mt-2" data-bs-toggle="modal"
+                        <button type="button" class="btn bg-gradient-danger btn-lg mt-2" *ngIf="course.Reg_Status==0"  
+                          >
+                          Closed
+                        </button>
+                        <button type="button" class="btn bg-gradient-succes btn-lg mt-2"  *ngIf="course.Reg_Status==1"  data-bs-toggle="modal"
                           data-bs-target="#exampleModalSignup">
                           Get Access
+                        </button>
+                        <button type="button" class="btn bg-gradient-warning btn-lg mt-2" *ngIf="course.Reg_Status==2"  
+                         >
+                          Coming Soon
                         </button>
                         <!-- <p class="text-sm font-weight-normal">Get a free sample (20MB)</p> -->
                       </div>

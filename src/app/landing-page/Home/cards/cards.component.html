@@ -170,13 +170,18 @@
                         <small>Support</small>
                       </div> -->
                   </div>
-                  <p class="card-description mt-4 mb-2" style="height: 100px;overflow-y: scroll;">
-                    {{ i.shortDesc }}
+                  <p class="card-description mt-4 mb-2" style="height: 100px;overflow-y: scroll;" [innerHTML]="i.shortDesc">
+                  
                   </p>
 
                   <div class="row justify-content-center">
                     <div class="col-lg-12 col-sm-12 col-md-12">
                       <a>
+                        <td class="align-center text-center text-sm p-1">
+                          <p   class="btn btn-danger btn"  *ngIf="i.Reg_Status==0" id="reg">Closed</p>
+                          <p  class="btn btn-success btn"  *ngIf="i.Reg_Status==1" id="reg">Open</p>
+                          <p  class="btn btn-warning btn"  *ngIf="i.Reg_Status==2" id="reg">Coming </p>
+                       </td>
                         <button type="button" routerLink="/LandingPage/singlecourses/{{ i._id }}" class="btn btn-primary btn">
                           Know more
                         </button></a
