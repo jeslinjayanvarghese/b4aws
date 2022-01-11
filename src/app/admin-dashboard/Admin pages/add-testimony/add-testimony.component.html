@@ -180,12 +180,12 @@
                                                         </div>
                                                         <span class="mb-2" *ngIf="name && name.invalid && name.touched" style="color:#D81B60; font-size: 12px;">Please enter testimoni name</span>
 
-                                                        <div class="mt-4"><span>Position</span></div> 
+                                                        <!-- <div class="mt-4"><span>Position</span></div> 
                                                         <div class="input-group input-group-dynamic ">
                                                             
                                                             <input type="text" formControlName="position" class="form-control multisteps-form__input" name="pos" [(ngModel)]="testimonialData.position">
                                                         </div>
-                                                        <span class="mb-2" *ngIf="position && position.invalid && position.touched" style="color:#D81B60; font-size: 12px;">Please enter position</span>
+                                                        <span class="mb-2" *ngIf="position && position.invalid && position.touched" style="color:#D81B60; font-size: 12px;">Please enter position</span> -->
 
                                                         <div class="mt-4"><span>Organisation</span></div> 
                                                         <div class="input-group input-group-dynamic ">
@@ -205,8 +205,10 @@
                                                         <div class="input-group input-group-dynamic mt-4 ">
                                                             <span >Course Title</span>
                                                             <!-- <input type="text" class="form-control multisteps-form__input"> -->
-                                                            <select formControlName="title" class="form-select" style="width:100%; height:3em; border: none; border-bottom:2px solid #ced4da;" name="name" [(ngModel)]="testimonialData.courseTitle" formControlName="status" placeholder="Course Title" required> 
+                                                            <select formControlName="title" class="form-select" style="width:100%; height:3em; border: none; border-bottom:2px solid #ced4da;" name="name" [(ngModel)]="testimonialData.coursname" formControlName="status" placeholder="Course Title" required> 
                                                                 <option selected>--Choose--</option>
+                                                                <option value="CERTIFIED SPECIALIST IN FULL STACK DEVELOPMENT using MEAN">CERTIFIED SPECIALIST IN FULL STACK DEVELOPMENT using MEAN</option>
+                                                                <option value="CERTIFIED SPECIALIST IN FULL STACK DEVELOPMENT using MERN">CERTIFIED SPECIALIST IN FULL STACK DEVELOPMENT using MERN</option>
                                                                 <option value="Full Stack Developer">Full Stack Develoment</option>
                                                                 <option value="Software Testing">Software Testing</option>
                                                                 <option value="Data Science And Analytics">Data Science And Analytics</option>

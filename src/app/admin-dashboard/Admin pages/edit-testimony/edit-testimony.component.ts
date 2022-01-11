@@ -13,10 +13,10 @@ export class EditTestimonyComponent implements OnInit {
  
   testimonialItem:any ={
     name:"",
-    position:"",
+    // position:"",
     organisation:"",
     testimony:"",
-    courseTitle:"",
+    coursename:"",
     image:""
   }
 
@@ -59,7 +59,7 @@ export class EditTestimonyComponent implements OnInit {
 
 Edittestimony=new FormGroup({
   name:new FormControl('',[Validators.required]),
-  position:new FormControl('',[Validators.required]),
+  // position:new FormControl('',[Validators.required]),
   Org:new FormControl('',[Validators.required]),
   testi:new FormControl('',[Validators.required]),
   title:new FormControl('',[Validators.required]),
@@ -71,10 +71,10 @@ get name()
 {
   return this.Edittestimony.get('name');
 }
-get position()
-{
-  return this.Edittestimony.get('position');
-}
+// get position()
+// {
+//   return this.Edittestimony.get('position');
+// }
 get Org()
 {
   return this.Edittestimony.get('Org');
