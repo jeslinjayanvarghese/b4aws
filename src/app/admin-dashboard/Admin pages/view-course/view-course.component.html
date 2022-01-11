@@ -174,7 +174,7 @@
                              </div>
                              <div class="col-lg-5 mx-auto">
                                  <h3 class="mt-lg-0 mt-4 fw-bold text-md text-black course-head">Course Name</h3>
-                                    <h2 class=" fw-bolder text-xxl course-name text-uppercase">{{singleCourse.courseTitle}}</h2>
+                                    <h5 class=" fw-bolder course-name text-uppercase">{{singleCourse.courseTitle}}</h5>
                                  <br>
                                  <h3 class="mt-lg-0 mt-4 fw-bold text-md text-black course-head">Course Short name</h3>
                                     <h2 class=" fw-bolder text-xxl  text-uppercase">{{singleCourse.courseShortName}}</h2>
@@ -224,7 +224,10 @@
                                      <div class="col-lg-5 mt-lg-0 mt-2">
                                          <label class="ms-0 text-black fw-bold">Registration Status</label>
                                          <!-- <p class="ms-4 fw-bold text-success"> Open</p> -->
-                                         <span class="ms-4 badge badge-success">{{singleCourse.active}}</span>
+                                         <p  class=" btn-sm btn btn-danger text-xs font-weight-bold mb-0 " *ngIf="singleCourse.Reg_Status==0" id="reg">Closed</p>
+                                         <p  class=" btn-sm btn btn-success text-xs font-weight-bold mb-0" *ngIf="singleCourse.Reg_Status==1" id="reg">open</p>
+                                         <p  class=" btn-sm btn btn-warning text-xs font-weight-bold mb-0" *ngIf="singleCourse.Reg_Status==2" id="reg">comming </p>
+                                    
                                          <!-- <select class="form-control" name="choices-material" id="choices-material">
                                              
                      <option value="Choice 1" selected="" class="ms-4"> Open</option>
@@ -238,7 +241,7 @@
                      <option value="Choice 1" selected="">Institutional</option>
                      
                    </select> -->
-                   <p class="ms-4 fw-bolder text-info text-xxl "> {{singleCourse.category}}</p>
+                   <p class="ms-4 fw-bolder text-info text-xxl "> {{singleCourse.courseCategory}}</p>
                                      </div>
                                      
                                  </div>
@@ -274,11 +277,11 @@
                         </div>
                          <hr>
                         <div class="row">
-                            <div class="col-lg-4 mx-auto">
+                            <!-- <div class="col-lg-4 mx-auto">
                                 <label class="mt-4 fw-bold text-md text-black ms-5 ">Course Objectives</label>
                                 
                                 <div [innerHTML]=singleCourse.Objectives ></div>
-                                </div>
+                                </div> -->
                                 <!-- <div class="col-lg-4 mx-auto">
                                     <label class="mt-4 fw-bold text-md text-black  ms-5">Entrance exam details</label>
                                     <div [innerHTML]=singleCourse.aptitude_test></div>

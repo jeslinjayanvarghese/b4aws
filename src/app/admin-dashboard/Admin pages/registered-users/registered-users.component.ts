@@ -49,51 +49,106 @@ searchText:any;
 
   }
 
-  deleteuser(RegsiteredUser : any) {   
-    Swal.fire({
-     title: `Are you sure to delete the corporate member ${RegsiteredUser.name}?`,
-     confirmButtonColor: "#3085d6",
-     confirmButtonText: "Yes, Delete it!",
-     denyButtonText: "No, Cancel please!",
-     showDenyButton: true,
-     text: "You won't be able to revert this!",
-     icon: 'warning',
-     cancelButtonColor: '#d33',
-   }).then((result) => {
-     if (result) {
-       this.adminServ.deleteuser(RegsiteredUser)
-         .subscribe(
-           response => {
-             console.log(response._id);
-             if (response.isConfirmed) {
-              Swal.fire("Network Error", "Please do after sometime ", "error")
-              .then(()=>{
-                this.router.navigate(['../registered-users'], { relativeTo: this.route });
-              })
+//   deleteuser(RegsiteredUser : any) {   
+//     Swal.fire({
+//      title: `Are you sure to delete the corporate member ${RegsiteredUser.name}?`,
+//      confirmButtonColor: "#3085d6",
+//      confirmButtonText: "Yes, Delete it!",
+//      denyButtonText: "No, Cancel please!",
+//      showDenyButton: true,
+//      text: "You won't be able to revert this!",
+//      icon: 'warning',
+//      cancelButtonColor: '#d33',
+//    }).then((result) => {
+//      if (result) {
+//        this.adminServ.deleteuser(RegsiteredUser)
+//          .subscribe(
+//            response => {
+//              console.log(response._id);
+//              if (response.isConfirmed) {
+//               Swal.fire("Successfully Deleted","","success")
+//               .then(()=>{
+//                 let currentUrl = this.router.url;
+//                 this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+//                     this.router.navigate([currentUrl]);
+//                 });
+//               })
+//               }
+//              else {
+//               Swal.fire("Network Error", "Please do after sometime ", "error")
+//               .then(()=>{
+//                 this.router.navigate(['../registered-users'], { relativeTo: this.route });
+//               })
                
-             }
-             else {
-              Swal.fire("Successfully Deleted","","success")
-              .then(()=>{
-                let currentUrl = this.router.url;
-                this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-                    this.router.navigate([currentUrl]);
-                });
-              })
+              
               
  
-             }
-           }
+//              }
+//            }
  
-         )
+//          )
  
-     } else {
-       Swal.fire("Cancelled", "Your course record is safe ", "error");
-     }
+//      } else {
+//        Swal.fire("Cancelled", "Your course record is safe ", "error");
+//      }
  
-   })
- }
+//    })
+//  }
 
+ // neww
+
+    
+ deleteuser(RegsiteredUser : any) {   
+  Swal.fire({
+   title: `Are you sure to delete the course ${RegsiteredUser.name}?`,
+   confirmButtonColor: "#3085d6",
+   confirmButtonText: "Yes, Delete it!",
+   denyButtonText: "No, Cancel please!",
+   showDenyButton: true,
+   text: "You won't be able to revert this!",
+   icon: 'warning',
+   cancelButtonColor: '#d33',
+ }).then((result) => {
+   if (result.isConfirmed) {
+     this.adminServ.deleteuser(RegsiteredUser)
+       .subscribe(
+         response => {
+           if (response) {
+             Swal.fire("Successfully Deleted","","success")
+             .then(()=>{
+               let currentUrl = this.router.url;
+               this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+                   this.router.navigate([currentUrl]);
+               });
+             })
+           }
+           else {
+             Swal.fire("Network Error", "Please do after sometime ", "error")
+             .then(()=>{
+               this.router.navigate(['../registered-users'], { relativeTo: this.route });
+             })
+
+           }
+         }
+
+       )
+
+   } else {
+     Swal.fire("Cancelled", "Your course record is safe ", "error");
+   }
+
+ })
+}
+
+
+
+
+
+
+  
+  
+  
+  
 
 
 

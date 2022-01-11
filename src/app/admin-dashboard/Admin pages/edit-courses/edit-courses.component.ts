@@ -3,16 +3,30 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import {AdminServiceService} from '../admin-service.service';
 import Swal from 'sweetalert2';
-import {Router,ActivatedRoute} from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
+import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 
 @Component({
   selector: 'app-edit-courses',
   templateUrl: './edit-courses.component.html',
-  styleUrls: ['./edit-courses.component.css']
+  styleUrls: ['./edit-courses.component.css'],
+   providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
 })
 export class EditCoursesComponent implements OnInit {
 
 
+  public tools: object = {
+    items: ['Undo', 'Redo', '|',
+        'Bold', 'Italic', 'Underline', 'StrikeThrough', '|',
+        'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
+        'SubScript', 'SuperScript', '|',
+        'LowerCase', 'UpperCase', '|',
+        'Formats', 'Alignments', '|', 'OrderedList', 'UnorderedList', '|',
+        'Indent', 'Outdent', '|', 'CreateLink',
+        'Image', '|', 'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
+};
+  public height: number = 250;
+ 
 
   course:any ={
     courseTitle: "",
