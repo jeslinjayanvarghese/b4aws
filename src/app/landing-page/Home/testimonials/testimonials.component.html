@@ -31,10 +31,10 @@
       <!-- cards starts here  -->
       <div class="col-md-6 mx-auto text-center">
         <span class="badge badge-white text-dark mb-2"></span>
-        <h2 class="text-white mb-3">Some thoughts from our clients</h2>
+        <h2 class="text-white mb-3">Some thoughts from our Students</h2>
         <h5 class="text-white font-weight-light">
-          Check Out what our Students has to say about the Courses and how they have benefitted !
-          Don't Miss the opportunity !
+          Check Out what our Students has to say about the Courses and how they
+          have benefitted ! Don't Miss the opportunity !
         </h5>
       </div>
     </div>
@@ -51,25 +51,28 @@
                     <div class="blur-shadow-avatar">
                       <img
                         class="avatar avatar-xxl shadow-lg justify-content-center"
-                        src="{{ i.image }}"
+                        src="api/{{ i.image }}"
                         alt="avatar"
                       />
                     </div>
                   </div>
                 </div>
-                <div class="card-body text-center pb-0" style="height: 300px;overflow-y: scroll;">
+                <div
+                  class="card-body text-center pb-0"
+                  style="height: 300px; overflow-y: scroll"
+                >
                   <h4 class="mb-0">{{ i.name }}</h4>
                   <a
-                  href="javascript:;"
-                  class="card-title mt-3 h5 d-block text-darker"
-                >
-                  {{ i.organisation }}
-                </a>
+                    href="javascript:;"
+                    class="card-title mt-3 h5 d-block text-darker"
+                  >
+                  </a>
+                  <p class="text-info">@ {{ i.organisation }}</p>
                   <p>{{ i.position }}</p>
-                  <p class="mt-2">
-                    {{ i.testimony }} <br><h6 class="mb-0" >- {{ i.coursename }} </h6>
-                  </p>
+                  <p class="mt-2">{{ i.testimony }} <br /></p>
+                  <p class="mb-0 mt-2 text-info" >- {{ i.coursename }} </p>
                 </div>
+                
                 <div class="card-footer text-center pt-2">
                   <div class="mx-auto">
                     <svg
