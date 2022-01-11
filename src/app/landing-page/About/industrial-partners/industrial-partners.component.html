@@ -4,7 +4,7 @@
     <div class="h1 text-center text-dark" id="pageHeaderTitle">INDUSTRIAL PARTNERS</div>
 <div class="logo-slider">
 	<div class="logo-slide-track">
-		<div class="slide" *ngFor="let i of industrials">
+		<div class="slide mb-3" *ngFor="let i of industrials">
 			<img src="api/{{ i.image }}" [style.height.px] ='imageHeight' [style.width.px] ='imageWidth'
             [style.margin.px] ='imageMargin' alt="" />
 		</div>
