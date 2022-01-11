@@ -11,7 +11,7 @@ import { LandingService } from 'src/app/landing.service';
 export class KnowledgePartnersComponent implements OnInit {
   image: any ='';
   knowledge =(this.image);
-  imageWidth:number =100;
+  imageWidth:number =200;
   imageHeight:number =200;
   imageMargin:number = 3;
 
