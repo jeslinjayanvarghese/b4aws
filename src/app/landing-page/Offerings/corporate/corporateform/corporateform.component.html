@@ -96,7 +96,7 @@
                                 <label class="form-label"> GST Number</label>
                               <div class="input-group input-group-dynamic mb-4">
                                
-                                <input class="form-control"  type="text" [(ngModel)]="corporate.GST" name="GST" placeholder="GST Number"
+                                <input class="form-control"  type="text"  [(ngModel)]="corporate.GST" name="GST" placeholder="GST Number"
                                 value="" formControlName="GST">
                               </div>
                             </div>
@@ -122,8 +122,9 @@
                                 <label class="form-label">Mobile Number</label>
                               <div class="input-group input-group-dynamic mb-4">
                                
-                                <input class="form-control" type="text" [(ngModel)]="corporate.phone" name="identityNo"
+                                <input class="form-control" type="tel" [(ngModel)]="corporate.phone" name="identityNo"
                                 placeholder="" value="" formControlName="identityNo" >
+                                
                               </div>
                             </div>
                             </div>

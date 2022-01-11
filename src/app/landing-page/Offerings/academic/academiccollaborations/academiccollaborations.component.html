@@ -102,14 +102,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr  *ngFor='let member of members' >
+                <tr  *ngFor='let member of members, let i = index;' >
                   <td>
                     <div class="d-flex px-2">
-                      <div>
-                        <img src="../../assets/material/img/ictak.png" class="avatar avatar-sm rounded-circle me-2">
-                      </div>
+                     
                       <div class="my-auto">
-                        <h6 class="mb-0 text-xs">{{ member.slno }}</h6>
+                        <h6 class="mb-0 text-sm">{{ i+1 }}</h6>
                       </div>
                     </div>
                   </td>
@@ -119,23 +117,24 @@
                   <td>
                     <span class="badge badge-dot me-4">
                       <i class="bg-info"></i>
-                      <span class="text-dark text-xs">{{ member.name }}</span>
+                      <span class="text-dark text-sm">{{ member.name }}</span>
                     </span>
                   </td>
                   <td class="align-middle text-center">
                     <div class="d-flex align-items-center">
-                      <span class="me-2 text-xs">{{ member.website }}</span>
+                     
+                      <a class="me-2 text-sm" href="{{ member.website }}" target="_blank">{{ member.website }}</a>
                       <div>
                        
                       </div>
                     </div>
                   </td>
 
-                  <td class="align-middle">
+                  <!-- <td class="align-middle">
                     <button class="btn btn-link text-secondary mb-0">
-                      <i class="fa fa-ellipsis-v text-xs"></i>
+                      <i class="fa fa-ellipsis-v text-sm"></i>
                     </button>
-                  </td>
+                  </td> -->
                 </tr>
 
               

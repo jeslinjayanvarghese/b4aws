@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from '@angular/router';
 import {AdminServiceService} from '../admin-service.service'
 import Swal from 'sweetalert2';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
+
 
 @Component({
   selector: 'app-addcourse',

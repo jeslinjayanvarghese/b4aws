@@ -39,6 +39,14 @@
               ICT Academy of Kerala conducts a wide variety of Events and Courses.
             </p>
             <button
+            type="button"
+            class="btn bg-gradient-success w-auto me-2 mt-4"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModalSignup"
+          >
+            Apply Now
+          </button>
+            <button
               type="button"
               class="btn bg-gradient-success w-auto me-2 mt-4"
               data-bs-toggle="modal"
@@ -46,6 +54,14 @@
             >
               Apply Now
             </button>
+            <button
+            type="button"
+            class="btn bg-gradient-success w-auto me-2 mt-4"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModalSignup"
+          >
+            Apply Now
+          </button>
           </div>
         </div>
       </div>
@@ -80,18 +96,18 @@
                 <div class="card-body pb-3">
                   <form role="form text-start"  #RegForm="ngForm" (ngSubmit)='newReg()'>
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Name</label>
-                      <input type="text" class="form-control" name="name"[(ngModel)]="EventReg.name" required class="form-control is-valid">
+                      <!-- <label class="form-label">Name</label> -->
+                      <input type="text" class="form-control" placeholder="name" name="name"[(ngModel)]="EventReg.name" required class="form-control is-valid">
                     </div>
 
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Email</label>
-                      <input type="email" class="form-control" name="email" [(ngModel)]="EventReg.email" required>
+                      <!-- <label class="form-label">Email</label> -->
+                      <input type="email" class="form-control" placeholder="Email" name="email" [(ngModel)]="EventReg.email" required>
                     </div>
 
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Number</label>
-                      <input type="text" class="form-control" name="phoneno" [(ngModel)]="EventReg.phoneno" required>
+                      <!-- <label class="form-label">Number</label> -->
+                      <input type="text" class="form-control" placeholder="Number" name="phoneno" [(ngModel)]="EventReg.phoneno" required>
                     </div>
 
                     <label class="form-label">Event Name</label>
@@ -108,13 +124,13 @@
                       <label class="form-label">Amount</label>
                       <input type="number" class="form-control" name="eventAmount"  [(ngModel)]="event.eventRegFee" required disabled>
                     </div>
-
+<!-- 
                     <div class="form-check form-check-info d-flex float-start ps-0">
                       <input class="form-check-input mt-0" type="checkbox" value="" id="flexCheckDefault" checked="" required>
                       <label class="form-check-label mb-0 ms-3" for="flexCheckDefault">
                         I agree the <a href="javascript:;" class="text-dark font-weight-bolder">Terms and Conditions</a>
-                      </label>
-                    </div>
+                      </label> 
+                    </div> -->
                     <div class="text-center">
                       <button type="submit" [disabled]=RegForm.invalid  class="btn bg-gradient-primary w-100 mt-4 mb-0">Register</button>
                     </div>
@@ -321,7 +337,7 @@
                               <h1 class="text-white mb-4">
                                 {{ event.eventname }}
                               </h1>
-                              <p class="lead text-white mb-sm-6 mb-4" style="max-height: 300px;overflow-y: scroll;" [innerHTML]="event.eventAbout" >
+                              <p class="lead text-white mb-sm-6 mb-4" style="max-height: 300px;overflow-y: scroll;" [innerHTML]="event.eventabout" >
                                 
                               </p>
                               <!-- <p class="text-white h6 text-uppercase mb-4">

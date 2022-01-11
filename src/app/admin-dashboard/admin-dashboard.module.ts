@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AdminDashboardRoutingModule } from './admin-dashboard-routing.module';
 import { DashboardComponent } from './Admin pages/dashboard/dashboard.component';
