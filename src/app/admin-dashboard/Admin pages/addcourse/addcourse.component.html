@@ -154,14 +154,14 @@
             <!-- for better frontend ui experience.. short tagname of type -->
             <span class="details">Course ShortName</span>  
             <input type="text"  class="form-control"  formControlName="name" required  name="title" [(ngModel)]="course.courseShortName"> 
-            <small style="color:#D81B60;" *ngIf="name && name.invalid && name.touched">Title is required</small>
+            <small style="color:#D81B60;" *ngIf="name && name.invalid && name.touched">Course name is required</small>
           </div>
 
           <div class="input-box">
             <!-- for better frontend ui experience.. short tagname of type -->
             <span class="details">Course Type</span>  
             <input type="text"  class="form-control"  formControlName="type" required  name="title" [(ngModel)]="course.courseType"> 
-            <small style="color:#D81B60;" *ngIf="type && type.invalid && type.touched">Title is required</small>
+            <small style="color:#D81B60;" *ngIf="type && type.invalid && type.touched">Course type is required</small>
           </div>
           
        
@@ -171,7 +171,11 @@
           <div class="input-box">
             <span class="details">Short Description</span>
             <!-- <input type="text"  class="form-control"  formControlName="describe" name="short" [(ngModel)]="course.shortDesc" required> -->
-            <angular-editor formControlName="short" class="form-control"  [(ngModel)]="course.shortDesc" name="sd" required></angular-editor>
+            <!-- <angular-editor formControlName="short" class="form-control"  [(ngModel)]="course.shortDesc" name="sd" required></angular-editor> -->
+              
+          <ejs-richtexteditor  [toolbarSettings]='tools'  formControlName="short" class="form-control"  [(ngModel)]="course.shortDesc" name="sd" [height]='height'>
+            </ejs-richtexteditor>
+
             <small style="color:#D81B60;" *ngIf="short && short.invalid && short.touched">Short Description is required</small>
           </div>
           <!-- <div class="input-box">
@@ -198,7 +202,7 @@
           </div> -->
           <div class="input-box">
             <span class="details">Course Category</span>
-            <select class="form-select" style="width:100%; height:3em" formControlName="category" name="cat" [(ngModel)]="course.category" required> 
+            <select class="form-select" style="width:100%; height:3em" formControlName="category" name="cat" [(ngModel)]="course.courseCategory" required> 
               <option selected>Choose from the list</option>
               <option value="Retail">Retail</option>
               <option value="Institutional">Institutional</option>
@@ -207,9 +211,13 @@
             <small style="color:#D81B60;" *ngIf="category && category.invalid && category.touched">Course Category is required</small>
           </div>
 
+
           <div class="input-box">
             <span class="details">About Course</span>
-            <angular-editor formControlName="about" class="form-control"  [(ngModel)]="course.courseAbout" name="sd2" required></angular-editor>
+            <!-- <angular-editor formControlName="about" class="form-control"  [(ngModel)]="course.courseAbout" name="sd2" required></angular-editor> -->
+            <ejs-richtexteditor  [toolbarSettings]='tools'  formControlName="about" class="form-control"  [(ngModel)]="course.courseAbout" name="sd2" [height]='height'>
+            </ejs-richtexteditor>
+
             <!-- <input type="text" class="form-control"  formControlName="about" required> -->
             <small style="color:#D81B60;" *ngIf="about && about.invalid && about.touched">About Course is required</small>
           </div>
@@ -218,7 +226,7 @@
             <span class="details">Entrance exam date</span>
             <input type="date"  class="form-control"  formControlName="entrance" required  name="date" [(ngModel)]="course.EntranceExamDate"> 
             <!-- <angular-editor formControlName="date" class="form-control"  [(ngModel)]="course.dates" name="dat" required></angular-editor> -->
-            <small style="color:#D81B60;" *ngIf="entrance && entrance.invalid && entrance.touched">Important dates are required</small>
+            <small style="color:#D81B60;" *ngIf="entrance && entrance.invalid && entrance.touched">Entrance exam are required</small>
           
           </div>
 <!-- copied -->
@@ -226,7 +234,7 @@
             <span class="details">Commencement Date</span>
             <input type="date"  class="form-control"  formControlName="commencement" required  name="date" [(ngModel)]="course.commencementDate"> 
             <!-- <angular-editor formControlName="date" class="form-control"  [(ngModel)]="course.dates" name="dat" required></angular-editor> -->
-            <small style="color:#D81B60;" *ngIf="commencement && commencement.invalid && commencement.touched">Important dates are required</small>
+            <small style="color:#D81B60;" *ngIf="commencement && commencement.invalid && commencement.touched">Commencement are required</small>
           
           </div>
 
@@ -234,7 +242,7 @@
             <span class="details">Orientation Date</span>
             <input type="date"  class="form-control"  formControlName="orientation" required  name="date" [(ngModel)]="course.orientationDate"> 
             <!-- <angular-editor formControlName="date" class="form-control"  [(ngModel)]="course.dates" name="dat" required></angular-editor> -->
-            <small style="color:#D81B60;" *ngIf="orientation && orientation.invalid && orientation.touched">Important dates are required</small>
+            <small style="color:#D81B60;" *ngIf="orientation && orientation.invalid && orientation.touched">Orientation date are required</small>
           
           </div>
 
@@ -242,7 +250,7 @@
             <span class="details">Course Starting Date</span>
             <input type="date"  class="form-control"  formControlName="sdate" required  name="sdat" [(ngModel)]="course.startDate"> 
             <!-- <angular-editor formControlName="date" class="form-control"  [(ngModel)]="course.dates" name="dat" required></angular-editor> -->
-            <small style="color:#D81B60;" *ngIf="sdate && sdate.invalid && sdate.touched">Important dates are required</small>
+            <small style="color:#D81B60;" *ngIf="sdate && sdate.invalid && sdate.touched">course starting date are required</small>
           </div>
 
       
@@ -255,7 +263,7 @@
           <div class="input-box">
             <span class="details">Course Registration Fee</span>
             <input type="text"  class="form-control"  formControlName="regfee"  name="regfee" [(ngModel)]="course.courseRegFee" required>
-            <small style="color:#D81B60;" *ngIf="regfee && regfee.invalid && regfee.touched">Course Fee is required</small>
+            <small style="color:#D81B60;" *ngIf="regfee && regfee.invalid && regfee.touched">Course registration is required</small>
           </div>
  
           <!-- <div class="input-box">
@@ -269,7 +277,7 @@
           <div class="input-box">
             <span class="details">Course Duration</span>
             <input type="text"  class="form-control"  formControlName="duration"   name="regDur" [(ngModel)]="course.courseDuration" required>
-            <small style="color:#D81B60;" *ngIf="duration && duration.invalid && duration.touched">Course Fee is required</small>
+            <small style="color:#D81B60;" *ngIf="duration && duration.invalid && duration.touched">Course duration is required</small>
           </div>
               
           <!-- <div class="input-box">
@@ -280,10 +288,13 @@
             
           <div class="input-box">
             <span class="details">Objectives or Agenda</span>
-            <!-- <textarea class="form-control"  formControlName="refund" name="obj" [(ngModel)]="course.Objectives"   required></textarea> -->
-            <!-- <angular-editor [placeholder]="'Enter text here...'"name="test" ></angular-editor> -->
-            <angular-editor formControlName="agenda" class="form-control"   [(ngModel)]="course.courseAgenda"   name="obj" required></angular-editor>
-            <small style="color:#D81B60;" *ngIf="agenda && agenda.invalid && agenda.touched">Refund Policy is required</small>
+      
+            <!-- <angular-editor formControlName="agenda" class="form-control"   [(ngModel)]="course.courseAgenda"   name="obj" required></angular-editor> -->
+            <ejs-richtexteditor [toolbarSettings]='tools'  formControlName="agenda" class="form-control"   [(ngModel)]="course.courseAgenda"   name="obj"  [height]='height'>
+            </ejs-richtexteditor>
+
+
+            <small style="color:#D81B60;" *ngIf="agenda && agenda.invalid && agenda.touched">objectives or agenda is required</small>
           </div>
 
           <!-- sample-->
@@ -291,7 +302,7 @@
           <div class="input-box">
             <span class="details">Sample entrance Question</span>
             <input type="text"  class="form-control"  formControlName="sample"   name="que" [(ngModel)]="course.samplequestion" required>
-            <small style="color:#D81B60;" *ngIf="sample && sample.invalid && sample.touched">Course Fee is required</small>
+            <small style="color:#D81B60;" *ngIf="sample && sample.invalid && sample.touched">Sample entrance question is required</small>
           </div>
 <!--           
           <div class="input-box">
@@ -303,7 +314,7 @@
           <div class="input-box">
             <span class="details">Placement List</span>
             <input type="text"  class="form-control"  formControlName="placement"   name="placelist" [(ngModel)]="course.placementlist" required>
-            <small style="color:#D81B60;" *ngIf="placement && placement.invalid && placement.touched">Course Fee is required</small>
+            <small style="color:#D81B60;" *ngIf="placement && placement.invalid && placement.touched">Placement List is required</small>
           </div>
 <!--           
           <div class="input-box">
@@ -315,7 +326,7 @@
           <div class="input-box">
             <span class="details">Internship Certificate</span>
             <input type="text"  class="form-control"  formControlName="intern"   name="intern" [(ngModel)]="course.internshipcertificate"  required>
-            <small style="color:#D81B60;" *ngIf="intern && intern.invalid && intern.touched">Course Fee is required</small>
+            <small style="color:#D81B60;" *ngIf="intern && intern.invalid && intern.touched">Intership Certificate is required</small>
           </div>
           
           <!-- <div class="input-box">

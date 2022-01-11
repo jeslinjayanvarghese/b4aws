@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServiceService } from '../admin-service.service'
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -11,36 +13,45 @@ export class TodosComponent implements OnInit {
   // todoArray=[];
   todo = []
   todoForm: any
-
-  todoArray = ["hello world","just a trial ","new course added","new course added","new course added","new course added"]
+  tododata = {
+    todos: ""
+  }
+  list:any
+  todoArray = []
  
-  constructor() { }
+  constructor(private adminServ:AdminServiceService) { }
   
 
 
 
   ngOnInit(): void {
+    this.adminServ.getTodo().subscribe((data) => {
+        this.list = data
+      })
   }
 
 
-  addTodo(value:any){
-    if(value!==""){
-     this.todoArray.push = value
-     this.todoForm.resetForm()
-    //console.log(this.todos) 
-  }else{
-    alert('Field required **')
-  }
+  addTodo(){
+
+    if (this.tododata.todos === "") {
+      Swal.fire("Empty Submission", "Not allowed ", "error")
+    }else{
+    console.log("vannee",this.tododata.todos)
     
+    this.adminServ.addTodo(this.tododata).subscribe((data) => { 
+      console.log("vannee", data.todo)
+          // window.location.reload();
+    })
+      }
   }
 
   /*delete item*/
-  deleteItem(todo:any){
-  	for(let i=0 ;i<= this.todoArray.length ;i++){
-  		if(todo== this.todoArray[i]){
-  			this.todoArray.splice(i,1)
-  		}
-  	}
+  deleteItem(todo: any) {
+    console.log("clicked")
+    this.adminServ.deleteTodo(todo).subscribe((data) => {
+      // window.location.reload();
+      // alert("deleted successfully")
+    })
   }
 
   // submit Form

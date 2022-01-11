@@ -3,16 +3,44 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from '@angular/router';
 import {AdminServiceService} from '../admin-service.service'
 import Swal from 'sweetalert2';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+// import { AngularEditorConfig } from '@kolkov/angular-editor';
+// import { Editor,Toolbar } from 'ngx-editor';
 
 
 @Component({
   selector: 'app-addcourse',
   templateUrl: './addcourse.component.html',
-  styleUrls: ['./addcourse.component.css']
+  styleUrls: ['./addcourse.component.css'],
+  providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
 })
 export class AddcourseComponent implements OnInit {
+  
+  public tools: object = {
+    items: ['Undo', 'Redo', '|',
+        'Bold', 'Italic', 'Underline', 'StrikeThrough', '|',
+        'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
+        'SubScript', 'SuperScript', '|',
+        'LowerCase', 'UpperCase', '|',
+        'Formats', 'Alignments', '|', 'OrderedList', 'UnorderedList', '|',
+        'Indent', 'Outdent', '|', 'CreateLink',
+        'Image', '|', 'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
+};
+  // public iframe: object = { enable: true };
+  public height: number = 200;
+ 
 
-
+  //  editor:any = Editor
+  //  toolbar: Toolbar = [
+  //   ["bold", "italic"],
+  //   ["underline", "strike"],
+  //   ["code", "blockquote"],
+  //   ["ordered_list", "bullet_list"],
+  //   [{ heading: ["h1", "h2", "h3", "h4", "h5", "h6"] }],
+  //   ["link", "image"],
+  //   ["text_color", "background_color"],
+  //   ["align_left", "align_center", "align_right", "align_justify"]
+  // ];
 
 
     course:any = {
@@ -26,7 +54,7 @@ export class AddcourseComponent implements OnInit {
       EntranceExamDate : "",
       commencementDate : "",
       orientationDate : "",
-      category : "",
+      courseCategory : "",
       startDate : "",
       Objectives: "",
       courseRegFee : "",
@@ -63,7 +91,9 @@ export class AddcourseComponent implements OnInit {
 
   constructor(private Adminserve: AdminServiceService, private router: Router, private route: ActivatedRoute) { 
     
+    
   }
+
 
   // createFormData(event:any) {
   //   this.selectedFile = <File>event.target.files[0];
@@ -179,8 +209,14 @@ export class AddcourseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.editor = new Editor();
 
   }
+
+  // make sure to destory the editor
+  // ngOnDestroy(): void {
+  //   this.editor.destroy();
+  // }
 
   //course image upload
   courseImage(event: any) {

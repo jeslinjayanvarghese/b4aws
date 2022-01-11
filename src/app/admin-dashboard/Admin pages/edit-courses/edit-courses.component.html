@@ -166,14 +166,14 @@
             <!-- for better frontend ui experience.. short tagname of type -->
             <span class="details">Course ShortName</span>  
             <input type="text"  class="form-control"  formControlName="name" required  name="title" [(ngModel)]="course.courseShortName"> 
-            <small style="color:#D81B60;" *ngIf="name && name.invalid && name.touched">Title is required</small>
+            <small style="color:#D81B60;" *ngIf="name && name.invalid && name.touched">Course shortname is required</small>
           </div>
 
           <div class="input-box">
             <!-- for better frontend ui experience.. short tagname of type -->
             <span class="details">Course Type</span>  
             <input type="text"  class="form-control"  formControlName="type" required  name="title" [(ngModel)]="course.courseType"> 
-            <small style="color:#D81B60;" *ngIf="type && type.invalid && type.touched">Title is required</small>
+            <small style="color:#D81B60;" *ngIf="type && type.invalid && type.touched">Course type is required</small>
           </div>
           
        
@@ -183,7 +183,9 @@
           <div class="input-box">
             <span class="details">Short Description</span>
             <!-- <input type="text"  class="form-control"  formControlName="describe" name="short" [(ngModel)]="course.shortDesc" required> -->
-            <angular-editor formControlName="short" class="form-control"  [(ngModel)]="course.shortDesc" name="sd" required></angular-editor>
+            <!-- <angular-editor formControlName="short" class="form-control"  [(ngModel)]="course.shortDesc" name="sd" required></angular-editor> -->
+            <ejs-richtexteditor  [toolbarSettings]='tools'  formControlName="short" class="form-control"  [(ngModel)]="course.shortDesc" name="sd" [height]='height'>
+            </ejs-richtexteditor>
             <small style="color:#D81B60;" *ngIf="short && short.invalid && short.touched">Short Description is required</small>
           </div>
           <!-- <div class="input-box">
@@ -221,7 +223,9 @@
 
           <div class="input-box">
             <span class="details">About Course</span>
-            <angular-editor formControlName="about" class="form-control"  [(ngModel)]="course.courseAbout" name="sd2" required></angular-editor>
+            <!-- <angular-editor formControlName="about" class="form-control"  [(ngModel)]="course.courseAbout" name="sd2" required></angular-editor> -->
+            <ejs-richtexteditor  [toolbarSettings]='tools'   formControlName="about" class="form-control"  [(ngModel)]="course.courseAbout" name="sd2" [height]='height'>
+            </ejs-richtexteditor>
             <!-- <input type="text" class="form-control"  formControlName="about" required> -->
             <small style="color:#D81B60;" *ngIf="about && about.invalid && about.touched">About Course is required</small>
           </div>
@@ -230,7 +234,7 @@
             <span class="details">Entrance exam date</span>
             <input type="date"  class="form-control"  formControlName="entrance" required  name="date" [(ngModel)]="course.EntranceExamDate"> 
             <!-- <angular-editor formControlName="date" class="form-control"  [(ngModel)]="course.dates" name="dat" required></angular-editor> -->
-            <small style="color:#D81B60;" *ngIf="entrance && entrance.invalid && entrance.touched">Important dates are required</small>
+            <small style="color:#D81B60;" *ngIf="entrance && entrance.invalid && entrance.touched">Entrance exam are required</small>
           
           </div>
 <!-- copied -->
@@ -238,7 +242,7 @@
             <span class="details">Commencement Date</span>
             <input type="date"  class="form-control"  formControlName="commencement" required  name="date" [(ngModel)]="course.commencementDate"> 
             <!-- <angular-editor formControlName="date" class="form-control"  [(ngModel)]="course.dates" name="dat" required></angular-editor> -->
-            <small style="color:#D81B60;" *ngIf="commencement && commencement.invalid && commencement.touched">Important dates are required</small>
+            <small style="color:#D81B60;" *ngIf="commencement && commencement.invalid && commencement.touched">Commencement Date are required</small>
           
           </div>
 
@@ -292,9 +296,10 @@
             
           <div class="input-box">
             <span class="details">Objectives or Agenda</span>
-            <!-- <textarea class="form-control"  formControlName="refund" name="obj" [(ngModel)]="course.Objectives"   required></textarea> -->
-            <!-- <angular-editor [placeholder]="'Enter text here...'"name="test" ></angular-editor> -->
-            <angular-editor formControlName="agenda" class="form-control"   [(ngModel)]="course.courseAgenda"   name="obj" required></angular-editor>
+           
+            <ejs-richtexteditor  [toolbarSettings]='tools'   formControlName="agenda" class="form-control"   [(ngModel)]="course.courseAgenda"   name="obj" [height]='height'>
+            </ejs-richtexteditor>
+            <!-- <angular-editor formControlName="agenda" class="form-control"   [(ngModel)]="course.courseAgenda"   name="obj" required></angular-editor> -->
             <small style="color:#D81B60;" *ngIf="agenda && agenda.invalid && agenda.touched">Refund Policy is required</small>
           </div>
 
