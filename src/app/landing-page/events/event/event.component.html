@@ -40,15 +40,14 @@
             </p>
             <button
             type="button"
-            class="btn bg-gradient-success w-auto me-2 mt-4"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModalSignup"
+            class="btn bg-gradient-danger w-auto me-2 mt-4" *ngIf="event.regstatus==0"
+           
           >
-            Apply Now
+            Closed
           </button>
             <button
               type="button"
-              class="btn bg-gradient-success w-auto me-2 mt-4"
+              class="btn bg-gradient-success w-auto me-2 mt-4" *ngIf="event.regstatus==1"
               data-bs-toggle="modal"
               data-bs-target="#exampleModalSignup"
             >
@@ -56,11 +55,10 @@
             </button>
             <button
             type="button"
-            class="btn bg-gradient-success w-auto me-2 mt-4"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModalSignup"
+            class="btn bg-gradient-warning w-auto me-2 mt-4" *ngIf="event.regstatus==2"
+          
           >
-            Apply Now
+            Coming Soon
           </button>
           </div>
         </div>
@@ -97,7 +95,7 @@
                   <form role="form text-start"  #RegForm="ngForm" (ngSubmit)='newReg()'>
                     <div class="input-group input-group-outline mb-3">
                       <!-- <label class="form-label">Name</label> -->
-                      <input type="text" class="form-control" placeholder="name" name="name"[(ngModel)]="EventReg.name" required class="form-control is-valid">
+                      <input type="text" class="form-control" placeholder="Name" name="name"[(ngModel)]="EventReg.name" required class="form-control is-valid">
                     </div>
 
                     <div class="input-group input-group-outline mb-3">
@@ -119,9 +117,9 @@
                       </select> -->
                     </div>
 
-
+                   <label class="form-label">Amount</label>
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Amount</label>
+         
                       <input type="number" class="form-control" name="eventAmount"  [(ngModel)]="event.eventRegFee" required disabled>
                     </div>
 <!-- 
@@ -850,19 +848,19 @@
       <div>
         <!-- START Blogs w/ 3 images & quote & text -->
         <section
-          class="py-5 mt-3 position-relative border-radius-xl overflow-hidden shadow-lg mb-7"
+          class="py-5 mt-3"
         >
           <div
-            class="page-header min-height-300 mx-n3"
+            class="page-header min-height-300 mx-n3 "
             style="
               background-image: url('https://images.unsplash.com/photo-1492138786289-d35ea832da43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
               background-position: bottom;
             "
             loading="lazy"
           >
-            <span class="mask bg-gradient-dark opacity-100"
+            <span class="mask bg-gradient-dark opacity-100 "
               ><h1
-                class="text-white mb-0"
+                class="text-white mb-0 "
                 style="text-align: center; margin: 6rem"
                 data-aos="fade-down"
                 data-aos-duration="2000"
@@ -936,13 +934,27 @@
                               <small>₹</small>{{ event.eventfees }} + GST
                             </h1>
                             <button
+                            type="button"
+                            class="btn bg-gradient-danger btn-lg mt-2" *ngIf="event.regstatus==0"
+                     
+                          >
+                            Closed
+                          </button>
+                            <button
                               type="button"
-                              class="btn bg-gradient-danger btn-lg mt-2"
+                              class="btn bg-gradient-success btn-lg mt-2" *ngIf="event.regstatus==1"
                               data-bs-toggle="modal"
                               data-bs-target="#exampleModalSignup"
                             >
                               Get Access
                             </button>
+                            <button
+                            type="button"
+                            class="btn bg-gradient-warning btn-lg mt-2" *ngIf="event.regstatus==2"
+    
+                          >
+                            Coming Soon
+                          </button>
                             <!-- <p class="text-sm font-weight-normal">Get a free sample (20MB)</p> -->
                           </div>
                         </div>
@@ -957,7 +969,7 @@
         <!-- -------- END Features w/ 4 cols w/ colored icon & title & text -------- -->
 
         <!-- testimonials starts here -->
-        <!-- <app-event-testimonials></app-event-testimonials> -->
+        <app-event-testimonials></app-event-testimonials>
         <!-- testimonial ends here -->
         
       </div>
