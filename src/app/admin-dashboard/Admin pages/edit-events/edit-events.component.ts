@@ -3,13 +3,29 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import {AdminServiceService} from '../admin-service.service'
+import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 
 @Component({
   selector: 'app-edit-events',
   templateUrl: './edit-events.component.html',
-  styleUrls: ['./edit-events.component.css']
+  styleUrls: ['./edit-events.component.css'],
+  providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
 })
 export class EditEventsComponent implements OnInit {
+  
+  public tools: object = {
+    items: ['Undo', 'Redo', '|',
+        'Bold', 'Italic', 'Underline', 'StrikeThrough', '|',
+        'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
+        'SubScript', 'SuperScript', '|',
+        'LowerCase', 'UpperCase', '|',
+        'Formats', 'Alignments', '|', 'OrderedList', 'UnorderedList', '|',
+        'Indent', 'Outdent', '|', 'CreateLink',
+        'Image', '|', 'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
+};
+  // public iframe: object = { enable: true };
+  public height: number = 200;
+ 
     
   eventDetails = {
     coursename: "",
@@ -61,8 +77,7 @@ export class EditEventsComponent implements OnInit {
     startdat: new FormControl('', [Validators.required]),
     enddat: new FormControl('', [Validators.required]),
     img:new FormControl('',[Validators.required]),
-    
-   
+    status:new FormControl('',[Validators.required])
   })
 
   addevent()
@@ -71,10 +86,16 @@ export class EditEventsComponent implements OnInit {
   }
 
 
+  get status()
+  {
+    return this.AddeventForm.get('status');
+  }
+
   get name()
   {
     return this.AddeventForm.get('name');
   }
+  
   get corname()
   {
     return this.AddeventForm.get('corname');

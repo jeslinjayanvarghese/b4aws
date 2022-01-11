@@ -100,7 +100,7 @@ editTestimonial(item: any) {
 //!Events
 
 getevent(id: any) {
-  return this.http.get(`${this.server_address}/eventsadmin/singleevent/` +id);
+  return this.http.get(`${this.server_address}/events/single/` +id);
 }
 
 newEvent(item: any) {

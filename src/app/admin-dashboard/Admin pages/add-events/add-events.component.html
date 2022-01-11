@@ -186,26 +186,34 @@ creation_date:Date -->
           
           <div class="input-box">
             <span class="details">About</span>
-            <angular-editor  class="form-control"  formControlName="about" required name="corname"  [(ngModel)]="eventDetails.eventabout" required></angular-editor>
+            <ejs-richtexteditor  [toolbarSettings]='tools' class="form-control"  formControlName="about" required name="corname"  [(ngModel)]="eventDetails.eventabout" [height]='height'>
+            </ejs-richtexteditor>
+            <!-- <angular-editor  class="form-control"  formControlName="about" required name="corname"  [(ngModel)]="eventDetails.eventabout" required></angular-editor> -->
             <small style="color:#D81B60;" *ngIf="about && about.invalid && about.touched">Event about is required</small>
           </div>
 
           <div class="input-box">
             <span class="details">Event Overview</span>
-            <angular-editor  class="form-control"  formControlName="oveview" required name="corname"  [(ngModel)]="eventDetails.eventoverview" required></angular-editor>
+            <!-- <angular-editor  class="form-control"  formControlName="oveview" required name="corname"  [(ngModel)]="eventDetails.eventoverview" required></angular-editor>-->
+            <ejs-richtexteditor  [toolbarSettings]='tools'  class="form-control"  formControlName="oveview" required name="corname"  [(ngModel)]="eventDetails.eventoverview" [height]='height'>
+            </ejs-richtexteditor>
             <small style="color:#D81B60;" *ngIf="oveview && oveview.invalid && oveview.touched">Event overview is required</small>
           </div>
 
           <div class="input-box">
             <span class="details">Event Agenda</span>
-            <angular-editor class="form-control"  formControlName="agenda" required name="corname"  [(ngModel)]="eventDetails.eventagenda" required></angular-editor>
+            <ejs-richtexteditor  [toolbarSettings]='tools'  class="form-control"  formControlName="agenda" required name="corname"  [(ngModel)]="eventDetails.eventagenda"  [height]='height'>
+            </ejs-richtexteditor>
+            <!-- <angular-editor class="form-control"  formControlName="agenda" required name="corname"  [(ngModel)]="eventDetails.eventagenda" required></angular-editor> -->
             <small style="color:#D81B60;" *ngIf="agenda && agenda.invalid && agenda.touched">Event agenda is required</small>
           </div>
           
           <div class="input-box">
             <span class="details">Event Training</span>
           
-            <angular-editor  class="form-control"  formControlName="trainining" required name="corname"  [(ngModel)]="eventDetails.eventtraining" required></angular-editor>
+            <!-- <angular-editor  class="form-control"  formControlName="trainining" required name="corname"  [(ngModel)]="eventDetails.eventtraining" required></angular-editor> -->
+            <ejs-richtexteditor  [toolbarSettings]='tools' class="form-control"  formControlName="trainining" required name="corname"  [(ngModel)]="eventDetails.eventtraining"  [height]='height'>
+            </ejs-richtexteditor>
             <small style="color:#D81B60;" *ngIf="trainining && trainining.invalid && trainining.touched">Event training is required</small>
           </div>
 
@@ -220,15 +228,16 @@ creation_date:Date -->
 
           <div class="input-box">
             <span class="details">Last Date of registration</span>
-            <input type="text"  class="form-control"  formControlName="lastDate" required name="fee"  [(ngModel)]="eventDetails.lastDateReg"  eventsadmin>
+            <input type="date"  class="form-control"  formControlName="lastDate" required name="fee"  [(ngModel)]="eventDetails.lastDateReg"  eventsadmin>
             <small style="color:#D81B60;" *ngIf="lastDate && lastDate.invalid && lastDate.touched">Event lastdate of reg is required</small>
           </div>
           
           
           <div class="input-box">
             <span class="details">Event Objective</span>
-           
-            <angular-editor class="form-control"  formControlName="obj" required  name="objectives"  [(ngModel)]="eventDetails.eventobjective" required></angular-editor>
+            <ejs-richtexteditor  [toolbarSettings]='tools'class="form-control"  formControlName="obj" required  name="objectives"  [(ngModel)]="eventDetails.eventobjective"  [height]='height'>
+            </ejs-richtexteditor>
+            <!-- <angular-editor class="form-control"  formControlName="obj" required  name="objectives"  [(ngModel)]="eventDetails.eventobjective" required></angular-editor> -->
             <!-- <input type="text" class="form-control"  formControlName="about" required> -->
             <small style="color:#D81B60;" *ngIf="obj && obj.invalid && obj.touched"> event objective is required</small>
           </div>
@@ -244,6 +253,18 @@ creation_date:Date -->
             <input type="date"  class="form-control"  formControlName="enddat" required name="enddate"  [(ngModel)]="eventDetails.enddate">
             <small style="color:#D81B60;" *ngIf="enddat && enddat.invalid && enddat.touched">Event end date is required</small>
           </div>
+
+          <div class="input-box">
+            <span class="details">Registration Status</span>
+            <select class="form-select" style="width:100%; height:3em" name="reg"  [(ngModel)]="eventDetails.regstatus" formControlName="status" required> 
+              <option selected>Choose from the list</option>
+              <option value="0">Registration Closed</option>
+              <option value="1">Registration Open</option>
+              <option value="2">Coming Soon</option>
+            </select>
+            <small style="color:#D81B60;" *ngIf="status && status.invalid && status.touched">Registration Status is required</small>
+          </div>
+          
           
 
           <div class="input-box">
