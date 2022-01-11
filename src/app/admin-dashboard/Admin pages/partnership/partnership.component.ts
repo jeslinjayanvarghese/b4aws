@@ -48,6 +48,7 @@ partnerAppls:any;
        this.adminServ.deletepartner(partnerAppl)
          .subscribe(
            response => {
+             console.log("data vannee",response)
              if (response) {
                Swal.fire("Successfully Deleted","","success")
                .then(()=>{

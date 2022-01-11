@@ -11,8 +11,8 @@ export class AdminServiceService {
 
   constructor(private http: HttpClient) { }
   
-    server_address: string ='/api';
-  //server_address: string = "http://localhost:3000"
+    // server_address: string ='/api';
+  server_address: string = "http://localhost:3000"
   
   getCourses() {
     return this.http.get<any>(`${this.server_address}/course`);
@@ -60,7 +60,7 @@ getregistereduser() {
 };
 // delete registered user
 deleteuser(data:any){
-  return this.http.post<any>(`${this.server_address}/registration/remove`,data);
+  return this.http.post(`${this.server_address}/registration/remove` ,data);
 }
   
 
@@ -94,7 +94,7 @@ deletetestimonial(testi: any) {
 
 
 editTestimonial(item: any) {
-  return this.http.post<any>(`${this.server_address}/CourseTestimony/testimonial/update`, item)
+  return this.http.post<any>(`${this.server_address}/CourseTestimony/testimonial/update`,item)
 };
 
 //!Events
@@ -195,13 +195,13 @@ deleteacademic(AcademicAppln : any){
 }
 
 
-// corporate membership
+
 // corporate list
 getcorporate() {
   return this.http.get<any>(`${this.server_address}/CorporateApplication/data`);
 };
 deletecorporate(corporate:any) {
-  return this.http.post<any>(`${this.server_address}/CorporateApplication/remove`,corporate);
+  return this.http.post(`${this.server_address}/CorporateApplication/remove`,corporate);
 };
 
 // partnership
@@ -209,27 +209,33 @@ getpartnership() {
   return this.http.get<any>(`${this.server_address}/PartnershipApplication`);
 };
 // delete partnership member
-deletepartner(id:any){
-  return this.http.post<any>(`${this.server_address}/PartnershipApplication/remove`,id);
+deletepartner(item:any){
+  return this.http.post<any>(`${this.server_address}/PartnershipApplication/partner/remove` ,item);
 }
 
 
 
 
   // !Todos
-  addTodo(title:any) {
-    let id = this.todoList.length + 2;
 
-    const item: Todo = {
-      id: id,
-      isCompleted: false,
-      isFavorite: false,
-      date: new Date(),
-      title: title
-    }
-    this.todoList.unshift(item);
+  getTodo() {
+    return this.http.get<any>(`${this.server_address}/todo`);
+  };
+
+  addTodo(item: any) {
+    console.log("item",item)
+    return this.http.post<any>(`${this.server_address}/todo/todo/add`,item);
   }
-  
+
+  deleteTodo(item:any) {
+    return this.http.post<any>(`${this.server_address}/todo/todo/remove`,item);
+  };
+
+  UpdateTodo(item:any) {
+    return this.http.get<any>(`${this.server_address}/todo/update`,item);
+  };
+
+
   //! industry
 
   addIndustry(item: any) {

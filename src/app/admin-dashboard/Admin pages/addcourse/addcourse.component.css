@@ -134,9 +134,25 @@ form .user-details .input-box{
   .user-details::-webkit-scrollbar{
     width: 5px;
   }
+  
   }
+
   @media(max-width: 459px){
   .container .content .category{
     flex-direction: column;
   }
 }
+.NgxEditor__MenuBar{
+  width:20px;
+}
+/* 
+.NgxEditor__Wrapper{
+  width:350px;
+
+}
+ngx-editor-menu{
+  width:350px;
+}
+ngx-editor{
+  width:350px;
+} */

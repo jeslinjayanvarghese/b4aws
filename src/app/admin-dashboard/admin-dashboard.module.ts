@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
+
+import { NgxEditorModule } from 'ngx-editor';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -108,7 +110,9 @@ import { AddknowledgeComponent } from './Admin pages/addknowledge/addknowledge.c
     MatFormFieldModule,
     MatNativeDateModule,
     HttpClientModule,
-    AngularEditorModule
+    AngularEditorModule,
+    NgxEditorModule,
+    RichTextEditorModule
   ],
   exports:[
     DashboardComponent,
