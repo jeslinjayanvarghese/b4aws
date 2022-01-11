@@ -10,9 +10,9 @@ import { LandingService } from 'src/app/landing.service';
 export class PatronsComponent implements OnInit {
   image: any ='';
   patrons =(this.image);
-  imageWidth:number =100;
-  imageHeight:number =100;
-  imageMargin:number = 3;
+  imageWidth:number =200;
+  imageHeight:number =200;
+  imageMargin:number = 2;
 
  
 

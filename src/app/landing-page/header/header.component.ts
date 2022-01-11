@@ -66,10 +66,9 @@ export class HeaderComponent implements OnInit {
         }
       );
     }
-    console.log('data reached first');
+   
     this.authService.loginUser(this.userLogin).subscribe((response) => {
-      console.log('data reached ');
-      // let result = response;
+
       if (response.token) {
         localStorage.setItem('token', response.token);
         localStorage.setItem('add', response.add);
@@ -77,15 +76,10 @@ export class HeaderComponent implements OnInit {
         localStorage.setItem('delete', response.delete);
         localStorage.setItem('superadmin', response.superadmin);
 
-        // this.auth.role = response.role
-        // localStorage.setItem('user1', JSON.stringify(response.user))
-        // alert("Admin Logged Successfully")
         Swal.fire('Successfully Logged In', 'success');
         console.log('SuperAdmin logged', response.token);
         console.log('admin logged', response.role);
-        // this.router.navigate(['/adminpage']);
-
-
+     
         setTimeout(() => {
           this.router.navigate(['/adminpage']).then(() => {
             window.location.reload();
@@ -93,15 +87,11 @@ export class HeaderComponent implements OnInit {
         }, 500);
       
       } else {
-        Swal.fire('Warning!!', 'admin not found!', 'error').then((refresh) => {
+        Swal.fire('Warning!!', 'Admin not found!', 'error').then((refresh) => {
           window.location.reload();
         });
       }
     });
 
-    // .subscribe((data) => {
-    //   console.log("login", data)
-    //   this._router.navigate(['../login'])
-    // })
   }
 }

@@ -6,7 +6,7 @@
       <div class="logo-slide-track">
         <div class="slide" *ngFor="let i of patrons">
           <img
-            src="api/{{ i.image }}"
+            src="http://localhost:3000/{{ i.image }}"
             [style.height.px]="imageHeight"
             [style.width.px]="imageWidth"
             [style.margin.px]="imageMargin"

@@ -11,9 +11,9 @@ import { LandingService } from 'src/app/landing.service';
 export class IndustrialPartnersComponent implements OnInit {
   image: any ='';
   industrials =(this.image);
-  imageWidth:number =100;
-  imageHeight:number =100;
-  imageMargin:number = 3;
+  imageWidth:number =200;
+  imageHeight:number =200;
+  imageMargin:number = 2;
 
   constructor(private landingService: LandingService) { }
 
