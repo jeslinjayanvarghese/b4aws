@@ -11,8 +11,8 @@ export class AdminServiceService {
 
   constructor(private http: HttpClient) { }
   
-     server_address: string ='/api';
- // server_address: string = "http://localhost:3000"
+    //  server_address: string ='/api';
+ server_address: string = "http://localhost:3000"
   
   getCourses() {
     return this.http.get<any>(`${this.server_address}/course`);
@@ -206,7 +206,7 @@ deletecorporate(corporate:any) {
 
 // partnership
 getpartnership() {
-  return this.http.get<any>(`${this.server_address}/PartnershipApplication`);
+  return this.http.get<any>(`${this.server_address}/PartnershipApplication/partner`);
 };
 // delete partnership member
 deletepartner(item:any){

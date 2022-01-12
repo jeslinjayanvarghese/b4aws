@@ -43,3 +43,6 @@ a.btn {
     text-overflow: ellipsis;
     text-align: left;
 }
+.hui .btn{
+    width: 30%;
+}

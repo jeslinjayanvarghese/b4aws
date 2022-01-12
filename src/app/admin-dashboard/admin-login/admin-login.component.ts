@@ -19,7 +19,7 @@ export class AdminLoginComponent implements OnInit {
     password: ''
   }
 
-  constructor(private _router: Router,private auth:AuthService) { }
+  constructor(private _router: Router,private auth:AuthService,private router:Router) { }
 
   loginForm=new FormGroup({
     email:new FormControl('',[Validators.required]),
@@ -53,10 +53,6 @@ export class AdminLoginComponent implements OnInit {
         'Warning!!',
         'Please enter email & password!',
         'error')
-        .then (
-          refresh =>{
-            window.location.reload();
-        }) 
     }
     console.log("data reached first")
     this.auth.loginUser(this.userLogin)
@@ -70,6 +66,7 @@ export class AdminLoginComponent implements OnInit {
           localStorage.setItem('edit', response.edit)
           localStorage.setItem('delete', response.delete)
           localStorage.setItem('superadmin', response.superadmin)
+          localStorage.setItem('user', response.superadmin)
 
           // this.auth.role = response.role
           // localStorage.setItem('user1', JSON.stringify(response.user))
@@ -86,9 +83,26 @@ export class AdminLoginComponent implements OnInit {
             'Warning!!',
             'admin not found!',
             'error')
+            // .then (
+            //   refresh =>{
+            //     let currentUrl = this.router.url;
+            //     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+            //         this.router.navigate([currentUrl]);
+            //     });    
+            // }) 
+        }
+        if (this.userLogin.email != response.user && this.userLogin.password != response.user) {
+          
+          Swal.fire(
+            'Warning!!',
+            'admin not found!',
+            'error')
             .then (
               refresh =>{
-                window.location.reload();
+                let currentUrl = this.router.url;
+                this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+                    this.router.navigate([currentUrl]);
+                });    
             }) 
         }
         

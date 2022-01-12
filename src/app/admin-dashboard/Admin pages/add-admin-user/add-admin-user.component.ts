@@ -29,9 +29,10 @@ export class AddAdminUserComponent implements OnInit {
     firstname      : '',
     lastname       : '',
     email          : '',
+    designation    : '',
     superadmin     : false ,
     add            : false,
-    edit           :false, 
+    edit           : false, 
     delete         : false,
   }
 

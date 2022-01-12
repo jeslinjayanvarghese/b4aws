@@ -162,11 +162,11 @@
             <small style="color:#D81B60;" *ngIf="name && name.invalid && name.touched">Event Name is required</small>
           </div>
            
-          <div class="input-box">
+          <!-- <div class="input-box">
             <span class="details">Course Name</span>
             <input type="text"  class="form-control" formControlName="corname"  required name="corname"  [(ngModel)]="eventDetails.coursename">
             <small style="color:#D81B60;" *ngIf="corname && corname.invalid && corname.touched">course Name is required</small>
-          </div>
+          </div> -->
 
           <div class="input-box">
             <span class="details">Course Type</span>
@@ -218,7 +218,7 @@
 
           <div class="input-box">
             <span class="details">Last Date of registration</span>
-            <input type="text"  class="form-control"  formControlName="lastDate" required name="fee"  [(ngModel)]="eventDetails.lastDateReg"  eventsadmin>
+            <input type="date"  class="form-control"  formControlName="lastDate" required name="fee"  [(ngModel)]="eventDetails.lastDateReg"  eventsadmin>
             <small style="color:#D81B60;" *ngIf="lastDate && lastDate.invalid && lastDate.touched">Event lastdate of reg is required</small>
           </div>
           

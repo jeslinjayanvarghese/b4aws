@@ -21,3 +21,10 @@ textarea ::placeholder{
 .multisteps-form__content input{
     text-indent: 1.2rem;
 }
+.input-group .form-label{
+    margin-top: -20px;
+}
+.text-start span{
+    position: relative;
+    top: -25px;
+}
