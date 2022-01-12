@@ -125,5 +125,42 @@ get pwd()
 
         }
       });    
-    }
+  }
+  
+
+
+
+
+
+  //change role
+
+ changeRole() {
+
+  let element = <HTMLInputElement>document.getElementById('superAdmin');
+  let isChecked = element.checked;
+   console.log("checked", isChecked)
+   this.adminUser.superadmin = isChecked
+
+  };
+
+  addRole() {
+    let element = <HTMLInputElement>document.getElementById('addAccess');
+  let isChecked = element.checked;
+   console.log("checked", isChecked)
+   this.adminUser.add = isChecked
+  }
+
+  editRole() {
+    let element = <HTMLInputElement>document.getElementById('editAccess');
+  let isChecked = element.checked;
+   console.log("checked", isChecked)
+   this.adminUser.edit = isChecked
+  }
+  
+  deleteRole() {
+    let element = <HTMLInputElement>document.getElementById('deleteAccess');
+  let isChecked = element.checked;
+   console.log("checked", isChecked)
+   this.adminUser.delete = isChecked
+  }
 }

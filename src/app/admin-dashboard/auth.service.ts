@@ -9,17 +9,19 @@ export class AuthService {
   add: any
   edit: any
   delete: any
-  superadmin:any
+  superadmin: any
+  users:any
 
-     server_address: string ='/api';
-  //server_address :string ='http://localhost:3000';
+    //  server_address: string ='/api';
+  server_address :string ='http://localhost:3000';
 
   constructor(private http: HttpClient) {
    
     this.superadmin=localStorage.getItem("superadmin");
     this.add=localStorage.getItem("add");
     this.edit=localStorage.getItem("edit");
-    this.delete=localStorage.getItem("delete");
+    this.delete = localStorage.getItem("delete");
+    this.users=localStorage.getItem("user");
 
   }
   

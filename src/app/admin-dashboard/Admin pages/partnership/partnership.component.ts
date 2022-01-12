@@ -20,7 +20,7 @@ partnerAppls:any;
   constructor(private adminServ:AdminServiceService,private router:Router, private route: ActivatedRoute,public auth:AuthService) { }
 
   ngOnInit(): void {
-    this.adminServ.getcorporate()
+    this.adminServ.getpartnership()
     .subscribe((applns)=>{
       this.partnerAppls   = applns;
       console.log(applns)

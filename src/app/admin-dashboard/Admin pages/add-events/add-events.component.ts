@@ -161,7 +161,7 @@ export class AddEventsComponent implements OnInit {
       this.fd.append(prop, this.eventDetails[prop]);
     }
   
-    this.adminServ.newEvent( this.fd).subscribe(
+    this.adminServ.newEvent( this.eventDetails).subscribe(
       response => {
         console.log(response);
         if (response) {
