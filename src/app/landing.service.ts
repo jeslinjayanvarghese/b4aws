@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class LandingService {
 
-    server_address: string ='/api';
-//server_address: string ='http://localhost:3000';
+   // server_address: string ='/api';
+server_address: string ='http://localhost:3000';
   
   constructor(private http: HttpClient) { }
 
@@ -107,7 +107,8 @@ export class LandingService {
   }
   //?SingleEvent
   getEventId(id:any){
-    return this.http.get<any>(`${this.server_address}/events/`+id);
+    console.log("service single events");
+    return this.http.get<any>(`${this.server_address}/events/single/`+id);
   }
 
   //?EventReg

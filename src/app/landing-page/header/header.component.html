@@ -295,16 +295,15 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <form role="form text-start" [formGroup]="loginForm" (submit)="loginUser()">
+                  <form role="form text-start"  #loginForm="ngForm"  (ngSubmit)="loginUser()">
                     <div class="input-group input-group-static mb-4">
                       <label>Email</label>
-                      <input type="text" class="form-control" placeholder="Enter Your Email" formControlName="email"
-                        name="email"  [(ngModel)]="userLogin.email" required />
+                      <input type="text" class="form-control" placeholder="Enter Your Email" name="email" #email="ngModel" [(ngModel)]="userLogin.email" required />
                         <small style="color:#D81B60;" *ngIf="email && email.invalid && email.touched">Email is required</small>
                     </div>
                     <div class="input-group input-group-static mb-4">
                       <label>Password</label>
-                      <input type="password" class="form-control" formControlName="password"  [(ngModel)]="userLogin.password" placeholder="•••••••••••••" name="password" required autocomplete />
+                      <input type="password" class="form-control" #password="ngModel" name="password" [(ngModel)]="userLogin.password" placeholder="•••••••••••••" name="password" required autocomplete />
                         <small style="color:#D81B60;" *ngIf="password && password.invalid && password.touched">Password is required</small>
                     </div>
                     <!-- <div class="form-check form-switch d-flex align-items-center">
@@ -312,7 +311,7 @@
                       <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                     </div> -->
                     <div class="text-center">
-                      <button type="submit" class="btn bg-gradient-info mt-4 mb-0" >
+                      <button type="submit" [disabled]="loginForm.form.invalid" class="btn bg-gradient-info mt-4 mb-0" >
                         Sign in
                       </button>
                     </div>

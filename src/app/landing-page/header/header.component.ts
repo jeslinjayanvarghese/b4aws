@@ -54,7 +54,13 @@ export class HeaderComponent implements OnInit {
     this.landingService.getEvent().subscribe((data: any) => {
       this.events = data;
     });
+
+    
   }
+
+
+
+
 
   //login
 
@@ -86,7 +92,16 @@ export class HeaderComponent implements OnInit {
           });
         }, 500);
       
-      } else {
+      } 
+      else if(this.userLogin.email!=response.token){
+
+      Swal.fire('Warning!!', 'Invalid!', 'error').then((refresh) => {
+          window.location.reload();
+        });
+      }
+      
+      
+      else {
         Swal.fire('Warning!!', 'Admin not found!', 'error').then((refresh) => {
           window.location.reload();
         });

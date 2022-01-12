@@ -29,7 +29,8 @@ export class SinglePageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //SingleCoure
+    
+    //SingleCourse
     this.activatedrouter.paramMap.subscribe((params) => {
       console.log(params.get('id'));
       this.landingService

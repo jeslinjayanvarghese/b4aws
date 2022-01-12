@@ -35,13 +35,16 @@ export class EventComponent implements OnInit {
 
 //animation effects
     AOS.init();
+
 //singleevents
       this.activatedrouter.paramMap.subscribe((params) =>
       {        
         console.log(params.get("id"));
         this.landingService.getEventId(params.get("id")).subscribe((data:any)=>{
-          this.event=data;
+          console.log("event check ts");
           console.log(this.event);
+          this.event=data;
+         
         })
       })
       

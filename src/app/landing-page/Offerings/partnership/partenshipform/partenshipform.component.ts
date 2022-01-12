@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LandingService } from 'src/app/landing.service';
 
 @Component({
@@ -25,7 +26,7 @@ export class PartenshipformComponent implements OnInit {
     employeeCount: ''
   }
 
-  constructor(private fb: FormBuilder, private landingService: LandingService  ) { }
+  constructor(private fb: FormBuilder, private landingService: LandingService, private router: Router) { }
 
   validatePartnerForm = this.fb.group(
     {
@@ -55,6 +56,8 @@ export class PartenshipformComponent implements OnInit {
       console.log(data);
       }) 
       alert("Registration Successfull");
+      window.location.reload();
+      // this.router.navigate(['/partnership']);
   }
 
   ngOnInit(): void {
