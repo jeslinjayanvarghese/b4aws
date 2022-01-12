@@ -255,8 +255,8 @@
           </div>
 
           <div class="input-box">
-            <span class="details">Course Starting Date</span>
-            <input type="date"  class="form-control"  formControlName="sdate" required  name="sdat" [(ngModel)]="course.startDate"> 
+            <span class="details">Last Date of Registration</span>
+            <input type="date"  class="form-control"  formControlName="sdate" required  name="sdat" [(ngModel)]="course.lastDateReg"> 
             <!-- <angular-editor formControlName="date" class="form-control"  [(ngModel)]="course.dates" name="dat" required></angular-editor> -->
             <small style="color:#D81B60;" *ngIf="sdate && sdate.invalid && sdate.touched">Important dates are required</small>
           </div>

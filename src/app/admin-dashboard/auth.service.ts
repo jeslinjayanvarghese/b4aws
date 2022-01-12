@@ -12,8 +12,8 @@ export class AuthService {
   superadmin: any
   users:any
 
-    // server_address: string ='/api';
-  server_address :string ='http://localhost:3000';
+     server_address: string ='/api';
+  //server_address :string ='http://localhost:3000';
 
   constructor(private http: HttpClient) {
    

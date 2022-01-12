@@ -51,11 +51,12 @@ export class AddcourseComponent implements OnInit {
       courseAbout: "", // is same as LongDes
       courseAgenda: "",
       courseFee: "",
+      lastDateReg: "",
       EntranceExamDate : "",
       commencementDate : "",
       orientationDate : "",
       courseCategory : "",
-      startDate : "",
+
       Objectives: "",
       courseRegFee : "",
       courseDuration : "",

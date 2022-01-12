@@ -36,11 +36,11 @@ export class EditCoursesComponent implements OnInit {
     courseAbout: "", // is same as LongDes
     courseAgenda: "",
     courseFee: "",
+    lastDateReg:"",
     EntranceExamDate : "",
     commencementDate : "",
     orientationDate : "",
     category : "",
-    startDate : "",
     Objectives: "",
     courseRegFee : "",
     courseDuration : "",

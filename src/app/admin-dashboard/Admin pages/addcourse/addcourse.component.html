@@ -222,6 +222,8 @@
             <small style="color:#D81B60;" *ngIf="about && about.invalid && about.touched">About Course is required</small>
           </div>
 
+          
+
           <div class="input-box">
             <span class="details">Entrance exam date</span>
             <input type="date"  class="form-control"  formControlName="entrance" required  name="date" [(ngModel)]="course.EntranceExamDate"> 
@@ -247,8 +249,8 @@
           </div>
 
           <div class="input-box">
-            <span class="details">Course Starting Date</span>
-            <input type="date"  class="form-control"  formControlName="sdate" required  name="sdat" [(ngModel)]="course.startDate"> 
+            <span class="details">Last Date of Registration</span>
+            <input type="date"  class="form-control"  formControlName="sdate" required  name="sdat" [(ngModel)]="course.lastDateReg"> 
             <!-- <angular-editor formControlName="date" class="form-control"  [(ngModel)]="course.dates" name="dat" required></angular-editor> -->
             <small style="color:#D81B60;" *ngIf="sdate && sdate.invalid && sdate.touched">course starting date are required</small>
           </div>
