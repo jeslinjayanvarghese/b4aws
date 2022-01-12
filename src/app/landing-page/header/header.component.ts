@@ -66,11 +66,12 @@ export class HeaderComponent implements OnInit {
 
   loginUser() {
     if (this.userLogin.email == '' && this.userLogin.password == '') {
-      Swal.fire('Warning!!', 'Please enter email & password!', 'error').then(
-        (refresh) => {
-          window.location.reload();
-        }
-      );
+      Swal.fire('Warning!!', 'Please enter email & password!', 'error')
+      //   .then(
+      //   (refresh) => {
+      //     window.location.reload();
+      //   }
+      // );
     }
    
     this.authService.loginUser(this.userLogin).subscribe((response) => {

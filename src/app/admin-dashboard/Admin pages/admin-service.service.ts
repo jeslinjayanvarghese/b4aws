@@ -206,7 +206,7 @@ deletecorporate(corporate:any) {
 
 // partnership
 getpartnership() {
-  return this.http.get<any>(`${this.server_address}/PartnershipApplication`);
+  return this.http.get<any>(`${this.server_address}/PartnershipApplication/partner`);
 };
 // delete partnership member
 deletepartner(item:any){

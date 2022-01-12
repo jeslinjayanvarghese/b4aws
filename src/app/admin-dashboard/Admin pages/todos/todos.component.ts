@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminServiceService } from '../admin-service.service'
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,8 +19,8 @@ export class TodosComponent implements OnInit {
   }
   list:any
   todoArray = []
- 
-  constructor(private adminServ:AdminServiceService) { }
+  
+  constructor(private adminServ:AdminServiceService,private router:Router) { }
   
 
 
@@ -32,7 +33,6 @@ export class TodosComponent implements OnInit {
 
 
   addTodo(){
-
     if (this.tododata.todos === "") {
       Swal.fire("Empty Submission", "Not allowed ", "error")
     }else{
@@ -41,6 +41,11 @@ export class TodosComponent implements OnInit {
     this.adminServ.addTodo(this.tododata).subscribe((data) => { 
       console.log("vannee", data.todo)
           // window.location.reload();
+          let currentUrl = this.router.url;
+          this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+              this.router.navigate([currentUrl]);
+          });    
+      
     })
       }
   }
@@ -49,8 +54,10 @@ export class TodosComponent implements OnInit {
   deleteItem(todo: any) {
     console.log("clicked")
     this.adminServ.deleteTodo(todo).subscribe((data) => {
-      // window.location.reload();
-      // alert("deleted successfully")
+      let currentUrl = this.router.url;
+          this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+              this.router.navigate([currentUrl]);
+          });
     })
   }
 

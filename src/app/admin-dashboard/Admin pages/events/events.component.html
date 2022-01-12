@@ -31,9 +31,9 @@
             </a>
                       </li>
                       <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" routerLink="/adminpage/dashboard" >Admin Dashboard</a></li>
-                      <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Testimonials</li>
+                      <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Events</li>
                   </ol>
-                  <h4 class="font-weight-bolder mb-0">testimony list</h4>
+                  <h4 class="font-weight-bolder mb-0">Events list</h4>
               </nav>
               <div class="sidenav-toggler sidenav-toggler-inner d-xl-block d-none ">
                   <a href="javascript:;" class="nav-link text-body p-0">
@@ -161,9 +161,9 @@
                 <thead>
                   <tr class="text-center">
                     <th class="text-center text-uppercase text-dark text-sm font-weight-bolder ">Index no</th>
-                    <th class="text-uppercase text-dark text-sm font-weight-bolder ">course name</th>
                     <th class="text-uppercase text-dark text-sm font-weight-bolder ">Event name</th>
-                    <th class="text-uppercase text-dark text-sm font-weight-bolder ">Event Image</th>
+                    <!-- <th class="text-uppercase text-dark text-sm font-weight-bolder ">Event name</th> -->
+                    <!-- <th class="text-uppercase text-dark text-sm font-weight-bolder ">Event Image</th> -->
                     <th class="text-uppercase text-dark text-sm font-weight-bolder ps-2">Fees</th>
                     <th class="text-center text-uppercase text-dark text-sm font-weight-bolder ">Last Date registration</th>
                     <th class="text-center text-uppercase text-dark text-sm font-weight-bolder ">startdate</th>
@@ -182,13 +182,13 @@
                     <td class="align-center text-center text-sm p-1">
                         <p class="text-md font-weight-bold mb-0">{{event.eventname}}</p>
                     </td>
-                    <td class="align-center text-center text-sm p-1">
+                    <!-- <td class="align-center text-center text-sm p-1">
                         <p class="text-md font-weight-bold mb-0">{{event.coursename}}</p>
-                    </td>
+                    </td> -->
 
-                    <td class="align-center text-center text-sm p-1">
+                    <!-- <td class="align-center text-center text-sm p-1">
                         <img src="api/{{event.image}}" alt="" width="70px">
-                    </td>
+                    </td> -->
 
                     <td class="align-center text-center text-sm p-1">
                         <p class="text-md font-weight-bold mb-0">{{event.eventfees}}</p>

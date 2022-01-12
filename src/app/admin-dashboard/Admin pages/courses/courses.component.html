@@ -158,10 +158,10 @@
                                     <div class="ms-auto my-auto">
                                         <a routerLink="/adminpage/addcourses"
                                             class="btn bg-gradient-primary btn-sm mb-0"
-                                           >&nbsp;
+                                            *ngIf="auth.loggedIn() && auth.add ==='true'||auth.loggedIn() && auth.superadmin === 'true'">&nbsp;
                                             New Course</a>
 
-                                            <!-- [hidden]="!auth.loggedIn() && auth.add ==='false'||!auth.loggedIn() && auth.superadmin === 'false'" -->
+                                        <!-- [hidden]="!auth.loggedIn() && auth.add ==='false'||!auth.loggedIn() && auth.superadmin === 'false'" -->
                                     </div>
                                 </div>
                             </div>
@@ -203,15 +203,10 @@
                                                 <p class="text-md font-weight-bold mb-0 p-1">{{course.courseTitle}}</p>
                                             </td>
                                             <td class="align-center text-center text-sm">
-                                                <img src="api/{{course.courseImage}}" width="60px"
-                                                    alt="">
+                                                <img src="api/{{course.courseImage}}" width="60px" alt="">
                                             </td>
-                        <td class="align-center text-center text-sm p-1">
-                            <p class="text-md font-weight-bold mb-0">{{course.courseCategory}}</p>
-                        </td>
-
                                             <td class="align-center text-center text-sm p-1">
-                                                <p class="text-md font-weight-bold mb-0">{{course.category}}</p>
+                                                <p class="text-md font-weight-bold mb-0">{{course.courseCategory}}</p>
                                             </td>
 
                                             <td class="align-center text-center text-sm p-1">
@@ -224,7 +219,7 @@
                                                 <p class=" btn-sm btn btn-success text-xs font-weight-bold mb-0"
                                                     *ngIf="course.Reg_Status==1" id="reg">Open</p>
                                                 <p class=" btn-sm btn btn-warning text-xs font-weight-bold mb-0"
-                                                    *ngIf="course.Reg_Status==2" id="reg">Coming Soon </p>
+                                                    *ngIf="course.Reg_Status==2" id="reg">Coming </p>
 
                                             </td>
 
