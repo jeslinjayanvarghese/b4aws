@@ -201,9 +201,11 @@
                     </td>
                      
                     
-                    <td class="align-center text-center text-sm p-1 hui">
+                    <td class="align-center text-center text-xs p-1 ">
                         <!-- <p  class="badge badge-sm badge-success text-xs font-weight-bold  mb-0" >{{staff.role}}</p> -->
-                        <p class="btn btn-success ">{{staff.role}}</p>
+                        <p class="btn-sm btn btn-success text-xs font-weight-bold mb-0" *ngIf="staff.role==true">active</p>
+                        <p class="btn-sm btn btn-danger text-xs font-weight-bold mb-0" *ngIf="staff.role==false">false</p>
+                      
                     </td>
 
                     <!-- <td class="align-center text-center text-sm">
