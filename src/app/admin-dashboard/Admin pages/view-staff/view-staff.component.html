@@ -144,7 +144,7 @@
              <div class="col-12">
                  <div class="card">
                      <div class="card-body">
-                         <h2 class="mb-4">Testimony</h2>
+                         <h2 class="mb-4">Staff View</h2>
                          <div class="row">
                              <div class="col-xl-5 col-lg-6 text-center">
                                  <img class="w-75 border-radius-lg shadow-lg mx-auto" src="{{staffItem.image}}" alt="chair">        
@@ -152,18 +152,25 @@
                                 </div>
                              <div class="col-lg-5 mx-auto">
                                  <h3 class="mt-lg-0 mt-4 text-black fw-bold">Name</h3>
-                                   <h1 class="mt-lg-0 mt-4 fw-bolder" >{{staffItem.name}}</h1>
+                                   <h4 class="mt-lg-0 mt-4 fw-bolder" >{{staffItem.name}}</h4>
                                  <h3 class=" text-black fw-bold">Designation</h3>
-                                 <h1 class="mt-lg-0 mt-4 fw-bolder" >{{staffItem.designation}}</h1>
+                                 <h4 class="mt-lg-0 mt-4 fw-bolder" >{{staffItem.designation}}</h4>
                                  <h3  class=" text-black fw-bold ">Role</h3>
-                                 <h1 class="mt-lg-0 mt-4 fw-bolder badge badge-sm badge-danger">{{staffItem.role}}</h1>
+                                
+                    <td class="align-center text-center text-xs p-1 ">
+                        <!-- <p  class="badge badge-sm badge-success text-xs font-weight-bold  mb-0" >{{staff.role}}</p> -->
+                        <p class="btn-md btn btn-success text-xs font-weight-bold mb-0" *ngIf="staffItem.role==true">active</p>
+                        <p class="btn-md btn btn-danger text-xs font-weight-bold mb-0" *ngIf="staffItem.role==false">false</p>
+                      
+                    </td>
+
                                  
-                                 <h3  class=" text-black fw-bold">About</h3>
+                                 <h3  class="text-black fw-bold">About</h3>
                                  <!-- <h1 class="mt-lg-0 mt-4 fw-bolder" >{{testimonialItem.courseTitle}}</h1> -->
                                  <!-- <label class="mt-4 text-black fw-bold text-black">About</label> -->
-                                 <h3  class="fw-bold">
+                                 <p  class="fw-bold" style="color: #34477E;">
                                    {{staffItem.about}}
-                                 </h3>
+                                 </p>
                                 
                                  
                              </div>
